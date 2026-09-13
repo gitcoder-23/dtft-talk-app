@@ -59,6 +59,8 @@ export const Colors = {
   redLight: '#FFEBEB',
   rose600: '#E11D48',
   googleRed: '#EA4335',
+  pink: '#FF2D55',
+  pinkLight: '#FFEBF0',
 
   success: '#00C853',
   successLight: '#EAF7EE',

@@ -12,6 +12,8 @@ interface AppHeaderProps {
   showNotification?: boolean;
   hasUnreadNotifications?: boolean;
   onNotificationPress?: () => void;
+  rightIcon?: 'notification' | 'share' | 'none';
+  onSharePress?: () => void;
   onAvatarPress?: () => void;
 }
 
@@ -21,6 +23,8 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
   showNotification = true,
   hasUnreadNotifications = true,
   onNotificationPress,
+  rightIcon = 'notification',
+  onSharePress,
   onAvatarPress,
 }) => {
   const insets = useSafeAreaInsets();
@@ -46,9 +50,17 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
         <AppLogo size="small" />
       </View>
 
-      {/* Right: Notifications Bell and Avatar */}
+      {/* Right: Action Icon (Share or Notification) and Avatar */}
       <View style={styles.rightSection}>
-        {showNotification && (
+        {rightIcon === 'share' ? (
+          <TouchableOpacity
+            style={styles.iconButton}
+            onPress={onSharePress}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="share-social-outline" size={22} color={Colors.primaryDarker} />
+          </TouchableOpacity>
+        ) : rightIcon === 'notification' && showNotification ? (
           <TouchableOpacity
             style={styles.iconButton}
             onPress={onNotificationPress}
@@ -57,7 +69,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             <Ionicons name="notifications-outline" size={24} color={Colors.primaryDarker} />
             {hasUnreadNotifications && <View style={styles.unreadDot} />}
           </TouchableOpacity>
-        )}
+        ) : null}
 
         <TouchableOpacity
           style={styles.avatarButton}

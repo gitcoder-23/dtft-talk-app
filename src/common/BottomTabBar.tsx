@@ -41,7 +41,7 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({
           label = 'Notes';
         } else if (route.name === 'PracticeTab') {
           iconName = 'mic';
-          label = 'Practice';
+          label = 'Speak';
         } else if (route.name === 'ProgressTab') {
           iconName = isFocused ? 'stats-chart' : 'stats-chart-outline';
           label = 'Progress';

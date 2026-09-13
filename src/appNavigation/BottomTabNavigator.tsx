@@ -32,7 +32,7 @@ export const BottomTabNavigator: React.FC = () => {
       <Tab.Screen
         name="PracticeTab"
         component={PracticeScreen}
-        options={{ title: 'Practice' }}
+        options={{ title: 'Speak' }}
       />
       <Tab.Screen
         name="ProgressTab"
