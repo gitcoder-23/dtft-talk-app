@@ -1,20 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import { View } from 'react-native';
 
-const AppCommonWrapper = () => {
-  return (
-    <>
-      {/* <SafeAreaView style={styles.safeArea}>
-        <AppHeader
-          showBack={true}
-          onBackPress={() => navigation.goBack()}
-          hasUnreadNotifications={true}
-        />
-      </SafeAreaView> */}
-    </>
-  );
+interface AppCommonWrapperProps {
+  children?: React.ReactNode;
+}
+
+export const AppCommonWrapper: React.FC<AppCommonWrapperProps> = ({ children }) => {
+  return <View style={{ flex: 1 }}>{children}</View>;
 };
 
 export default AppCommonWrapper;
-
-const styles = StyleSheet.create({});

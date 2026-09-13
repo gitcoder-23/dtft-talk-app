@@ -23,6 +23,7 @@ import Svg, {
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import { CustomButton } from '../../common/CustomButton';
 
 const { width } = Dimensions.get('window');
@@ -55,7 +56,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
           <Svg width="120" height="100" viewBox="0 0 120 100">
             <Path
               d="M 120 0 Q 70 30 60 70 Q 50 100 0 100 L 120 100 Z"
-              fill="rgba(255, 59, 48, 0.8)"
+              fill={Colors.brandRedAlpha80}
             />
           </Svg>
         </View>
@@ -63,23 +64,23 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
         {/* Top Logo Section: 4 Circles DTFT Logo */}
         <View style={[styles.logoSection, { paddingTop: topInset + 12 }]}>
           <View style={styles.fourCircleRow}>
-            <View style={[styles.circleBadge, { backgroundColor: '#F44336' }]}>
+            <View style={[styles.circleBadge, { backgroundColor: Colors.circleRed }]}>
               <Text style={styles.circleLetter}>D</Text>
             </View>
-            <View style={[styles.circleBadge, { backgroundColor: '#00BCD4' }]}>
+            <View style={[styles.circleBadge, { backgroundColor: Colors.circleCyan }]}>
               <Text style={styles.circleLetter}>T</Text>
             </View>
-            <View style={[styles.circleBadge, { backgroundColor: '#FFC107' }]}>
+            <View style={[styles.circleBadge, { backgroundColor: Colors.circleAmber }]}>
               <Text style={styles.circleLetter}>F</Text>
             </View>
-            <View style={[styles.circleBadge, { backgroundColor: '#1E88E5' }]}>
+            <View style={[styles.circleBadge, { backgroundColor: Colors.circleBlue }]}>
               <Text style={styles.circleLetter}>T</Text>
             </View>
           </View>
 
           <View style={styles.brandTitleRow}>
             <Text style={styles.brandSubtitleMain}>
-              TALK <Text style={{ color: '#0084FF' }}>|</Text> SCHOOL OF ENGLISH & AI
+              TALK <Text style={{ color: Colors.primary }}>|</Text> SCHOOL OF ENGLISH & AI
             </Text>
           </View>
           <Text style={styles.brandSubtitleSec}>
@@ -93,20 +94,20 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
           <View style={styles.headlineContainer}>
             <Text style={styles.welcomeText}>Welcome to</Text>
             <View style={styles.dtftTitleRow}>
-              <Text style={[styles.bigTitle, { color: '#F44336' }]}>D</Text>
-              <Text style={[styles.bigTitle, { color: '#00BCD4' }]}>T</Text>
-              <Text style={[styles.bigTitle, { color: '#0084FF' }]}>F</Text>
-              <Text style={[styles.bigTitle, { color: '#0062E0' }]}>T </Text>
-              <Text style={[styles.bigTitle, { color: '#FF9500' }]}>Talk</Text>
+              <Text style={[styles.bigTitle, { color: Colors.circleRed }]}>D</Text>
+              <Text style={[styles.bigTitle, { color: Colors.circleCyan }]}>T</Text>
+              <Text style={[styles.bigTitle, { color: Colors.primary }]}>F</Text>
+              <Text style={[styles.bigTitle, { color: Colors.primaryBlueDark }]}>T </Text>
+              <Text style={[styles.bigTitle, { color: Colors.secondary }]}>Talk</Text>
             </View>
             <Text style={styles.centreSubtitle}>
               Spoken English & Skill Development Centre
             </Text>
             <Text style={styles.taglineText}>
-              <Text style={{ color: '#0084FF' }}>Learn </Text>
-              <Text style={{ color: '#F44336' }}>Today. </Text>
-              <Text style={{ color: '#0084FF' }}>Lead </Text>
-              <Text style={{ color: '#00C853' }}>Tomorrow.</Text>
+              <Text style={{ color: Colors.primary }}>Learn </Text>
+              <Text style={{ color: Colors.circleRed }}>Today. </Text>
+              <Text style={{ color: Colors.primary }}>Lead </Text>
+              <Text style={{ color: Colors.success }}>Tomorrow.</Text>
             </Text>
           </View>
 
@@ -116,60 +117,60 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             <Svg width="180" height="190" viewBox="0 0 200 210">
               <Defs>
                 <SvgGradient id="hoodieGrad" x1="0" y1="0" x2="1" y2="1">
-                  <Stop offset="0" stopColor="#0084FF" />
-                  <Stop offset="1" stopColor="#005CE6" />
+                  <Stop offset="0" stopColor={Colors.primary} />
+                  <Stop offset="1" stopColor={Colors.primaryDarker} />
                 </SvgGradient>
                 <SvgGradient id="laptopGrad" x1="0" y1="0" x2="0" y2="1">
-                  <Stop offset="0" stopColor="#E2E8F0" />
-                  <Stop offset="1" stopColor="#CBD5E1" />
+                  <Stop offset="0" stopColor={Colors.border} />
+                  <Stop offset="1" stopColor={Colors.slate300} />
                 </SvgGradient>
               </Defs>
 
               {/* Glowing AI Chip overhead */}
               <G transform="translate(10, 20)">
-                <Rect x="0" y="0" width="34" height="34" rx="8" fill="#E8F4FD" stroke="#0084FF" strokeWidth="2" />
-                <Circle cx="17" cy="17" r="10" fill="#0084FF" />
-                <Path d="M 17 2 L 17 7 M 17 27 L 17 32 M 2 17 L 7 17 M 27 17 L 32 17" stroke="#0084FF" strokeWidth="2" />
+                <Rect x="0" y="0" width="34" height="34" rx="8" fill={Colors.primaryLight} stroke={Colors.primary} strokeWidth="2" />
+                <Circle cx="17" cy="17" r="10" fill={Colors.primary} />
+                <Path d="M 17 2 L 17 7 M 17 27 L 17 32 M 2 17 L 7 17 M 27 17 L 32 17" stroke={Colors.primary} strokeWidth="2" />
               </G>
 
               {/* Student Body & Hoodie */}
               <Circle cx="120" cy="110" r="42" fill="url(#hoodieGrad)" />
-              <Circle cx="120" cy="72" r="32" fill="#FCD34D" />
+              <Circle cx="120" cy="72" r="32" fill={Colors.amber300} />
               {/* Hair */}
-              <Path d="M 90 70 C 90 40 150 40 150 70 C 145 60 130 55 120 58 C 110 55 95 60 90 70 Z" fill="#1E293B" />
+              <Path d="M 90 70 C 90 40 150 40 150 70 C 145 60 130 55 120 58 C 110 55 95 60 90 70 Z" fill={Colors.slate800} />
               {/* Smile & Eyes */}
-              <Circle cx="110" cy="70" r="3.5" fill="#1E293B" />
-              <Circle cx="130" cy="70" r="3.5" fill="#1E293B" />
-              <Path d="M 112 80 Q 120 90 128 80" stroke="#E11D48" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              <Circle cx="110" cy="70" r="3.5" fill={Colors.slate800} />
+              <Circle cx="130" cy="70" r="3.5" fill={Colors.slate800} />
+              <Path d="M 112 80 Q 120 90 128 80" stroke={Colors.rose600} strokeWidth="2.5" fill="none" strokeLinecap="round" />
 
               {/* Laptop & Desk */}
               <Rect x="85" y="125" width="70" height="42" rx="4" fill="url(#laptopGrad)" />
-              <Path d="M 80 167 L 160 167 L 155 174 L 85 174 Z" fill="#94A3B8" />
+              <Path d="M 80 167 L 160 167 L 155 174 L 85 174 Z" fill={Colors.textMuted} />
               {/* Apple / DTFT Logo on Laptop */}
-              <Circle cx="120" cy="146" r="5" fill="#FFFFFF" />
+              <Circle cx="120" cy="146" r="5" fill={Colors.white} />
 
               {/* Books Stack */}
-              <Rect x="148" y="148" width="46" height="10" rx="2" fill="#00C853" />
-              <Rect x="145" y="158" width="50" height="10" rx="2" fill="#FF3B30" />
-              <Rect x="142" y="168" width="54" height="10" rx="2" fill="#0084FF" />
+              <Rect x="148" y="148" width="46" height="10" rx="2" fill={Colors.success} />
+              <Rect x="145" y="158" width="50" height="10" rx="2" fill={Colors.danger} />
+              <Rect x="142" y="168" width="54" height="10" rx="2" fill={Colors.primary} />
 
               {/* Plant Pot */}
-              <Rect x="175" y="128" width="16" height="18" rx="3" fill="#F59E0B" />
-              <Path d="M 183 128 Q 175 112 183 105 Q 192 115 183 128" fill="#10B981" />
+              <Rect x="175" y="128" width="16" height="18" rx="3" fill={Colors.amber500} />
+              <Path d="M 183 128 Q 175 112 183 105 Q 192 115 183 128" fill={Colors.emerald} />
             </Svg>
 
             {/* Floating Activity Badges */}
             <View style={styles.floatingBadgesColumn}>
-              <View style={[styles.activityPill, { backgroundColor: '#0084FF' }]}>
+              <View style={[styles.activityPill, { backgroundColor: Colors.primary }]}>
                 <Text style={styles.activityPillText}>Learn</Text>
               </View>
-              <View style={[styles.activityPill, { backgroundColor: '#FF3B30' }]}>
+              <View style={[styles.activityPill, { backgroundColor: Colors.danger }]}>
                 <Text style={styles.activityPillText}>Practice</Text>
               </View>
-              <View style={[styles.activityPill, { backgroundColor: '#FFB300' }]}>
+              <View style={[styles.activityPill, { backgroundColor: Colors.warning }]}>
                 <Text style={styles.activityPillText}>Build</Text>
               </View>
-              <View style={[styles.activityPill, { backgroundColor: '#00C853' }]}>
+              <View style={[styles.activityPill, { backgroundColor: Colors.success }]}>
                 <Text style={styles.activityPillText}>Grow</Text>
               </View>
             </View>
@@ -179,29 +180,29 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
         {/* 4 Circular Category Cards */}
         <View style={styles.categoriesRow}>
           <TouchableOpacity activeOpacity={0.8} style={styles.categoryTile}>
-            <View style={[styles.categoryCircle, { backgroundColor: '#EBF5FF' }]}>
-              <Ionicons name="desktop-outline" size={28} color="#0084FF" />
+            <View style={[styles.categoryCircle, { backgroundColor: Colors.primarySoft }]}>
+              <Ionicons name="desktop-outline" size={28} color={Colors.primary} />
             </View>
             <Text style={styles.categoryTileText}>Computer{'\n'}Courses</Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.categoryTile}>
-            <View style={[styles.categoryCircle, { backgroundColor: '#FFEBEB' }]}>
-              <Ionicons name="hardware-chip-outline" size={28} color="#FF3B30" />
+            <View style={[styles.categoryCircle, { backgroundColor: Colors.redLight }]}>
+              <Ionicons name="hardware-chip-outline" size={28} color={Colors.danger} />
             </View>
             <Text style={styles.categoryTileText}>AI &{'\n'}Technology</Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.categoryTile}>
-            <View style={[styles.categoryCircle, { backgroundColor: '#FFF8E1' }]}>
-              <Ionicons name="color-palette-outline" size={28} color="#FFB300" />
+            <View style={[styles.categoryCircle, { backgroundColor: Colors.amber50 }]}>
+              <Ionicons name="color-palette-outline" size={28} color={Colors.warning} />
             </View>
             <Text style={styles.categoryTileText}>Creative{'\n'}Skills</Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.categoryTile}>
-            <View style={[styles.categoryCircle, { backgroundColor: '#E8F5E9' }]}>
-              <Ionicons name="trending-up-outline" size={28} color="#00C853" />
+            <View style={[styles.categoryCircle, { backgroundColor: Colors.successLighter }]}>
+              <Ionicons name="trending-up-outline" size={28} color={Colors.success} />
             </View>
             <Text style={styles.categoryTileText}>Career{'\n'}Growth</Text>
           </TouchableOpacity>
@@ -213,8 +214,8 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             <Text style={styles.featureSubHeading}>Build Your</Text>
             <Text style={styles.featureMainHeading}>
               Skills for a{'\n'}
-              <Text style={{ color: '#0084FF' }}>Better </Text>
-              <Text style={{ color: '#00C853' }}>Future</Text>
+              <Text style={{ color: Colors.primary }}>Better </Text>
+              <Text style={{ color: Colors.success }}>Future</Text>
             </Text>
             <View style={styles.featureBullets}>
               <Text style={styles.bulletItem}>Practical Training • Expert Guidance</Text>
@@ -226,22 +227,22 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
           <View style={styles.featureIllustration}>
             <Svg width="120" height="110" viewBox="0 0 130 120">
               {/* Laptop Graphic */}
-              <Rect x="20" y="45" width="85" height="52" rx="6" fill="#0084FF" />
-              <Rect x="25" y="50" width="75" height="42" rx="4" fill="#FFFFFF" />
+              <Rect x="20" y="45" width="85" height="52" rx="6" fill={Colors.primary} />
+              <Rect x="25" y="50" width="75" height="42" rx="4" fill={Colors.white} />
               {/* Graduation Hat on Screen */}
-              <Path d="M 62 60 L 40 70 L 62 78 L 84 70 Z" fill="#005CE6" />
-              <Rect x="54" y="74" width="16" height="10" fill="#005CE6" />
-              <Path d="M 80 73 L 86 85" stroke="#FFB300" strokeWidth="2.5" />
+              <Path d="M 62 60 L 40 70 L 62 78 L 84 70 Z" fill={Colors.primaryDarker} />
+              <Rect x="54" y="74" width="16" height="10" fill={Colors.primaryDarker} />
+              <Path d="M 80 73 L 86 85" stroke={Colors.warning} strokeWidth="2.5" />
               {/* Laptop Base */}
-              <Path d="M 12 97 L 112 97 L 105 104 L 20 104 Z" fill="#94A3B8" />
+              <Path d="M 12 97 L 112 97 L 105 104 L 20 104 Z" fill={Colors.textMuted} />
 
               {/* Floating Icons */}
               {/* Lightbulb */}
-              <Circle cx="24" cy="30" r="14" fill="#FEF9E7" />
-              <Path d="M 24 22 A 6 6 0 0 1 24 34 L 24 36" stroke="#FFB300" strokeWidth="2.5" />
+              <Circle cx="24" cy="30" r="14" fill={Colors.warningLight} />
+              <Path d="M 24 22 A 6 6 0 0 1 24 34 L 24 36" stroke={Colors.warning} strokeWidth="2.5" />
               {/* Code */}
-              <Circle cx="104" cy="28" r="14" fill="#E8F4FD" />
-              <Path d="M 98 28 L 101 25 M 101 31 L 98 28 M 110 28 L 107 25 M 107 31 L 110 28" stroke="#0084FF" strokeWidth="2" strokeLinecap="round" />
+              <Circle cx="104" cy="28" r="14" fill={Colors.primaryLight} />
+              <Path d="M 98 28 L 101 25 M 101 31 L 98 28 M 110 28 L 107 25 M 107 31 L 110 28" stroke={Colors.primary} strokeWidth="2" strokeLinecap="round" />
             </Svg>
           </View>
         </View>
@@ -267,7 +268,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
         {/* Footer: Safe • Secure • Trusted */}
         <View style={styles.footerSection}>
           <View style={styles.trustBadge}>
-            <Ionicons name="shield-checkmark" size={18} color="#0084FF" />
+            <Ionicons name="shield-checkmark" size={18} color={Colors.primary} />
             <Text style={styles.trustText}>Safe • Secure • Trusted</Text>
           </View>
         </View>
@@ -278,7 +279,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             <Svg width="100" height="90" viewBox="0 0 100 90">
               <Path
                 d="M 0 90 L 100 90 Q 50 30 0 0 Z"
-                fill="#FFC107"
+                fill={Colors.circleAmber}
               />
             </Svg>
           </View>
@@ -286,7 +287,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             <Svg width="120" height="90" viewBox="0 0 120 90">
               <Path
                 d="M 120 90 L 0 90 Q 60 30 120 0 Z"
-                fill="#00C853"
+                fill={Colors.success}
               />
             </Svg>
           </View>
@@ -299,7 +300,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   scrollContent: {
     paddingBottom: 20,
@@ -327,7 +328,7 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -336,7 +337,7 @@ const styles = StyleSheet.create({
   circleLetter: {
     fontSize: 22,
     fontWeight: Typography.weight.extraBold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   brandTitleRow: {
     marginTop: 8,
@@ -344,12 +345,12 @@ const styles = StyleSheet.create({
   brandSubtitleMain: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.extraBold,
-    color: '#D32F2F',
+    color: Colors.dangerDark,
     letterSpacing: 1.2,
   },
   brandSubtitleSec: {
     fontSize: Typography.size.xxs,
-    color: '#005CE6',
+    color: Colors.primaryDarker,
     fontWeight: Typography.weight.medium,
     marginTop: 2,
   },
@@ -366,7 +367,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   dtftTitleRow: {
     flexDirection: 'row',
@@ -380,7 +381,7 @@ const styles = StyleSheet.create({
   },
   centreSubtitle: {
     fontSize: Typography.size.xs,
-    color: '#475569',
+    color: Colors.slate600,
     fontWeight: Typography.weight.medium,
     marginTop: 2,
   },
@@ -403,7 +404,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.15,
     shadowRadius: 2,
@@ -412,7 +413,7 @@ const styles = StyleSheet.create({
   activityPillText: {
     fontSize: 10,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   categoriesRow: {
     flexDirection: 'row',
@@ -431,7 +432,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 6,
-    shadowColor: '#0F172A',
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 4,
@@ -440,12 +441,12 @@ const styles = StyleSheet.create({
   categoryTileText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     textAlign: 'center',
     lineHeight: 14,
   },
   featureBannerCard: {
-    backgroundColor: '#F0F9FF',
+    backgroundColor: Colors.sky50Soft,
     marginHorizontal: 16,
     borderRadius: 20,
     padding: 16,
@@ -453,8 +454,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#E0F2FE',
-    shadowColor: '#0084FF',
+    borderColor: Colors.sky50,
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.06,
     shadowRadius: 8,
@@ -465,13 +466,13 @@ const styles = StyleSheet.create({
   },
   featureSubHeading: {
     fontSize: Typography.size.sm,
-    color: '#0084FF',
+    color: Colors.primary,
     fontWeight: Typography.weight.bold,
   },
   featureMainHeading: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     marginVertical: 4,
     lineHeight: 24,
   },
@@ -480,7 +481,7 @@ const styles = StyleSheet.create({
   },
   bulletItem: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
     lineHeight: 16,
   },
@@ -509,16 +510,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     paddingHorizontal: 14,
     paddingVertical: 6,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
   },
   trustText: {
     fontSize: Typography.size.xs,
-    color: '#475569',
+    color: Colors.slate600,
     fontWeight: Typography.weight.medium,
   },
   bottomWaves: {

@@ -49,14 +49,14 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
 
   const defaultIconColor = isOutline
     ? iconColor || Colors.primary
-    : iconColor || '#FFFFFF';
+    : iconColor || Colors.white;
 
   const buttonContent = (
     <View style={styles.contentRow}>
       {loading ? (
         <ActivityIndicator
           size="small"
-          color={isOutline ? Colors.primary : '#FFFFFF'}
+          color={isOutline ? Colors.primary : Colors.white}
         />
       ) : (
         <>
@@ -109,7 +109,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
         style={[styles.container, isSmall && styles.smallContainer, isLarge && styles.largeContainer, style]}
       >
         <LinearGradient
-          colors={['#0084FF', '#005CE6']}
+          colors={Colors.buttonGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           style={[
@@ -172,12 +172,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   outlineContainer: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderWidth: 1.5,
-    borderColor: '#0084FF',
+    borderColor: Colors.primary,
   },
   secondaryContainer: {
-    backgroundColor: '#E8F4FD',
+    backgroundColor: Colors.primaryLight,
   },
   disabledContainer: {
     opacity: 0.5,
@@ -212,10 +212,10 @@ const styles = StyleSheet.create({
     fontSize: Typography.size.lg,
   },
   primaryText: {
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   outlineText: {
-    color: '#0084FF',
+    color: Colors.primary,
   },
   leftIcon: {
     marginRight: 8,

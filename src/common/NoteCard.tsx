@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Colors } from '../constants/color';
+import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../constants/fonts';
+import { Colors } from '../constants/color';
 import { NoteItem } from '../constants/mockData';
 
 interface NoteCardProps {
@@ -14,17 +14,17 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
   const getBadgeColor = (category: string) => {
     switch (category) {
       case 'Grammar':
-        return { bg: '#FFEBEB', text: '#E53935' };
+        return { bg: Colors.redLight, text: Colors.red600 };
       case 'Vocabulary':
-        return { bg: '#FFF8E1', text: '#F57C00' };
+        return { bg: Colors.amber50, text: Colors.orange700 };
       case 'Conversation':
-        return { bg: '#E8F8F5', text: '#00897B' };
+        return { bg: Colors.mint50, text: Colors.mintDark };
       case 'Speaking':
-        return { bg: '#F3E5F5', text: '#8E24AA' };
+        return { bg: Colors.purple50, text: Colors.purple };
       case 'Listening':
-        return { bg: '#E0F7FA', text: '#00838F' };
+        return { bg: Colors.tealLight, text: Colors.tealDark };
       default:
-        return { bg: '#E3F2FD', text: '#1976D2' };
+        return { bg: Colors.blue50, text: Colors.blue700 };
     }
   };
 
@@ -39,7 +39,7 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
       <View style={styles.cardContent}>
         {/* Left Icon Block */}
         <View style={[styles.iconBox, { backgroundColor: note.color }]}>
-          <Ionicons name={note.icon as any} size={28} color="#FFFFFF" />
+          <Ionicons name={note.icon as any} size={28} color={Colors.white} />
           <Text style={styles.iconTagText}>{note.category.slice(0, 4).toUpperCase()}</Text>
         </View>
 
@@ -63,7 +63,7 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
           {/* Meta Info Row */}
           <View style={styles.metaRow}>
             <View style={styles.metaItem}>
-              <Ionicons name="copy-outline" size={13} color="#64748B" />
+              <Ionicons name="copy-outline" size={13} color={Colors.slate500} />
               <Text style={styles.metaText}>{note.pages} pages</Text>
             </View>
 
@@ -72,7 +72,7 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
             </View>
 
             <View style={styles.metaItem}>
-              <Ionicons name="time-outline" size={13} color="#64748B" />
+              <Ionicons name="time-outline" size={13} color={Colors.slate500} />
               <Text style={styles.metaText}>{note.fileSize}</Text>
             </View>
           </View>
@@ -80,7 +80,7 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
 
         {/* Right Arrow */}
         <View style={styles.arrowContainer}>
-          <Ionicons name="chevron-forward" size={20} color="#0084FF" />
+          <Ionicons name="chevron-forward" size={20} color={Colors.primary} />
         </View>
       </View>
     </TouchableOpacity>
@@ -89,13 +89,13 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note, onPress }) => {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 16,
     padding: 12,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
-    shadowColor: '#0F172A',
+    borderColor: Colors.divider,
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.04,
     shadowRadius: 6,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   iconTagText: {
     fontSize: 8,
     fontWeight: Typography.weight.bold,
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: Colors.whiteAlpha90,
     marginTop: 2,
     letterSpacing: 0.5,
   },
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     flex: 1,
     marginRight: 6,
   },
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
     lineHeight: 16,
     marginBottom: 8,
   },
@@ -164,11 +164,11 @@ const styles = StyleSheet.create({
   },
   metaText: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
   },
   pdfBadge: {
-    backgroundColor: '#FFEBEE',
+    backgroundColor: Colors.red50,
     paddingHorizontal: 5,
     paddingVertical: 1,
     borderRadius: 4,
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
   pdfText: {
     fontSize: 9,
     fontWeight: Typography.weight.bold,
-    color: '#D32F2F',
+    color: Colors.dangerDark,
   },
   arrowContainer: {
     paddingLeft: 4,

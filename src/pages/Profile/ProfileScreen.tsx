@@ -14,6 +14,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 import { RootStackParamList } from "../../appNavigation/navigationTypes";
 import { Typography } from "../../constants/fonts";
+import { Colors } from "../../constants/color";
 import { AssetImages } from "../../constants/assetImages";
 import { CURRENT_STUDENT } from "../../constants/mockData";
 import { AppHeader } from "../../common/AppHeader";
@@ -90,12 +91,12 @@ export const ProfileScreen: React.FC = () => {
             onPress={() => navigation.navigate("CourseDetail")}
           >
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#E8F4FD" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.primaryLight }]}
             >
-              <Ionicons name="book-outline" size={20} color="#0084FF" />
+              <Ionicons name="book-outline" size={20} color={Colors.primary} />
             </View>
             <Text style={styles.menuItemText}>My Enrolled Course</Text>
-            <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+            <Ionicons name="chevron-forward" size={18} color={Colors.textMuted} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -106,12 +107,12 @@ export const ProfileScreen: React.FC = () => {
             }
           >
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#EAF7EE" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.successLight }]}
             >
-              <Ionicons name="download-outline" size={20} color="#00C853" />
+              <Ionicons name="download-outline" size={20} color={Colors.success} />
             </View>
             <Text style={styles.menuItemText}>Downloaded Study Notes</Text>
-            <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+            <Ionicons name="chevron-forward" size={18} color={Colors.textMuted} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -125,12 +126,12 @@ export const ProfileScreen: React.FC = () => {
             }
           >
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#FEF9E7" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.warningLight }]}
             >
-              <Ionicons name="ribbon-outline" size={20} color="#FFB300" />
+              <Ionicons name="ribbon-outline" size={20} color={Colors.warning} />
             </View>
             <Text style={styles.menuItemText}>Certificates & Achievements</Text>
-            <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+            <Ionicons name="chevron-forward" size={18} color={Colors.textMuted} />
           </TouchableOpacity>
         </View>
 
@@ -140,33 +141,33 @@ export const ProfileScreen: React.FC = () => {
 
           <View style={styles.menuItem}>
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#F4EFFB" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.purpleLight }]}
             >
-              <Ionicons name="moon-outline" size={20} color="#8E24AA" />
+              <Ionicons name="moon-outline" size={20} color={Colors.purple} />
             </View>
             <Text style={styles.menuItemText}>Dark Mode</Text>
             <Switch
               value={isDarkMode}
               onValueChange={setIsDarkMode}
-              trackColor={{ false: "#E2E8F0", true: "#0084FF" }}
+              trackColor={{ false: Colors.border, true: Colors.primary }}
             />
           </View>
 
           <View style={styles.menuItem}>
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#E8F4FD" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.primaryLight }]}
             >
               <Ionicons
                 name="notifications-outline"
                 size={20}
-                color="#0084FF"
+                color={Colors.primary}
               />
             </View>
             <Text style={styles.menuItemText}>Practice Reminders</Text>
             <Switch
               value={notificationsEnabled}
               onValueChange={setNotificationsEnabled}
-              trackColor={{ false: "#E2E8F0", true: "#0084FF" }}
+              trackColor={{ false: Colors.border, true: Colors.primary }}
             />
           </View>
 
@@ -181,12 +182,12 @@ export const ProfileScreen: React.FC = () => {
             }
           >
             <View
-              style={[styles.menuIconCircle, { backgroundColor: "#E0F7FA" }]}
+              style={[styles.menuIconCircle, { backgroundColor: Colors.tealLight }]}
             >
-              <Ionicons name="help-circle-outline" size={20} color="#00ACC1" />
+              <Ionicons name="help-circle-outline" size={20} color={Colors.teal} />
             </View>
             <Text style={styles.menuItemText}>Help & Support</Text>
-            <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+            <Ionicons name="chevron-forward" size={18} color={Colors.textMuted} />
           </TouchableOpacity>
         </View>
 
@@ -199,7 +200,7 @@ export const ProfileScreen: React.FC = () => {
           <Ionicons
             name="log-out-outline"
             size={20}
-            color="#FF3B30"
+            color={Colors.danger}
             style={{ marginRight: 8 }}
           />
           <Text style={styles.logoutBtnText}>Log Out from DTFT Talk</Text>
@@ -214,11 +215,11 @@ export const ProfileScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   container: {
     flex: 1,
-    backgroundColor: "#F8FAFC",
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     paddingHorizontal: 16,
@@ -226,13 +227,13 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   profileCard: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderRadius: 20,
     padding: 16,
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#EEF2F6",
+    borderColor: Colors.divider,
     marginBottom: 16,
   },
   avatarImage: {
@@ -240,7 +241,7 @@ const styles = StyleSheet.create({
     height: 64,
     borderRadius: 32,
     borderWidth: 2,
-    borderColor: "#0084FF",
+    borderColor: Colors.primary,
     marginRight: 14,
   },
   profileDetails: {
@@ -255,10 +256,10 @@ const styles = StyleSheet.create({
   studentName: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: "#0F172A",
+    color: Colors.textPrimary,
   },
   levelPill: {
-    backgroundColor: "#E8F4FD",
+    backgroundColor: Colors.primaryLight,
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 10,
@@ -266,27 +267,27 @@ const styles = StyleSheet.create({
   levelPillText: {
     fontSize: 10,
     fontWeight: Typography.weight.bold,
-    color: "#0084FF",
+    color: Colors.primary,
   },
   studentIdText: {
     fontSize: Typography.size.xxs,
-    color: "#64748B",
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
   },
   emailText: {
     fontSize: Typography.size.xxs,
-    color: "#94A3B8",
+    color: Colors.textMuted,
     marginTop: 2,
   },
   statsBar: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderRadius: 16,
     paddingVertical: 12,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
     borderWidth: 1,
-    borderColor: "#EEF2F6",
+    borderColor: Colors.divider,
     marginBottom: 20,
   },
   statCol: {
@@ -295,30 +296,30 @@ const styles = StyleSheet.create({
   statNum: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: "#0084FF",
+    color: Colors.primary,
   },
   statLabel: {
     fontSize: Typography.size.xxs,
-    color: "#64748B",
+    color: Colors.slate500,
     marginTop: 2,
   },
   statDivider: {
     width: 1,
     height: 24,
-    backgroundColor: "#EEF2F6",
+    backgroundColor: Colors.divider,
   },
   menuGroup: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderRadius: 20,
     padding: 14,
     borderWidth: 1,
-    borderColor: "#EEF2F6",
+    borderColor: Colors.divider,
     marginBottom: 16,
   },
   groupHeading: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: "#94A3B8",
+    color: Colors.textMuted,
     textTransform: "uppercase",
     letterSpacing: 0.5,
     marginBottom: 10,
@@ -328,7 +329,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: "#F8FAFC",
+    borderBottomColor: Colors.background,
   },
   menuIconCircle: {
     width: 36,
@@ -342,27 +343,27 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.semiBold,
-    color: "#1E293B",
+    color: Colors.slate800,
   },
   logoutBtn: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFF0F2",
+    backgroundColor: Colors.dangerLight,
     borderRadius: 16,
     paddingVertical: 14,
     marginTop: 8,
     borderWidth: 1,
-    borderColor: "#FFEBEB",
+    borderColor: Colors.redLight,
   },
   logoutBtnText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: "#FF3B30",
+    color: Colors.danger,
   },
   versionText: {
     fontSize: 10,
-    color: "#94A3B8",
+    color: Colors.textMuted,
     textAlign: "center",
     marginTop: 18,
   },

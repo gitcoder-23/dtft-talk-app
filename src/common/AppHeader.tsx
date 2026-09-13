@@ -40,7 +40,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             activeOpacity={0.7}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
-            <Ionicons name="chevron-back" size={26} color="#005CE6" />
+            <Ionicons name="chevron-back" size={26} color={Colors.primaryDarker} />
           </TouchableOpacity>
         )}
         <AppLogo size="small" />
@@ -54,7 +54,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             onPress={onNotificationPress}
             activeOpacity={0.7}
           >
-            <Ionicons name="notifications-outline" size={24} color="#005CE6" />
+            <Ionicons name="notifications-outline" size={24} color={Colors.primaryDarker} />
             {hasUnreadNotifications && <View style={styles.unreadDot} />}
           </TouchableOpacity>
         )}
@@ -82,9 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingBottom: 10,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderBottomWidth: 1,
-    borderBottomColor: '#F1F5F9',
+    borderBottomColor: Colors.borderLight,
   },
   leftSection: {
     flexDirection: 'row',
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     padding: 6,
     borderRadius: 20,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   unreadDot: {
     position: 'absolute',
@@ -116,16 +116,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: Colors.danger,
     borderWidth: 1.5,
-    borderColor: '#FFFFFF',
+    borderColor: Colors.white,
   },
   avatarButton: {
     width: 36,
     height: 36,
     borderRadius: 18,
     borderWidth: 2,
-    borderColor: '#0084FF',
+    borderColor: Colors.primary,
     overflow: 'hidden',
-    shadowColor: '#0084FF',
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,

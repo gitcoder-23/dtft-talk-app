@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Colors } from '../constants/color';
 import { Typography } from '../constants/fonts';
+import { Colors } from '../constants/color';
 import { PracticeModuleItem } from '../constants/mockData';
-import { CustomButton } from './CustomButton';
 
 interface PracticeModuleCardProps {
   module: PracticeModuleItem;
@@ -18,12 +17,12 @@ export const PracticeModuleCard: React.FC<PracticeModuleCardProps> = ({
   const getStatusBadge = () => {
     switch (module.status) {
       case 'New':
-        return { bg: '#FFF3E0', text: '#E65100' };
+        return { bg: Colors.orange50, text: Colors.orange900 };
       case 'In Progress':
-        return { bg: '#E8F5E9', text: '#2E7D32' };
+        return { bg: Colors.successLighter, text: Colors.successDark };
       case 'Not Started':
       default:
-        return { bg: '#F1F5F9', text: '#64748B' };
+        return { bg: Colors.borderLight, text: Colors.slate500 };
     }
   };
 
@@ -57,17 +56,17 @@ export const PracticeModuleCard: React.FC<PracticeModuleCardProps> = ({
           <View style={styles.bottomRow}>
             <View style={styles.metaGroup}>
               <View style={styles.metaItem}>
-                <Ionicons name="book-outline" size={13} color="#64748B" />
+                <Ionicons name="book-outline" size={13} color={Colors.slate500} />
                 <Text style={styles.metaText}>{module.lessons}</Text>
               </View>
 
               <View style={styles.metaItem}>
-                <Ionicons name="time-outline" size={13} color="#64748B" />
+                <Ionicons name="time-outline" size={13} color={Colors.slate500} />
                 <Text style={styles.metaText}>{module.duration}</Text>
               </View>
 
               <View style={styles.metaItem}>
-                <Ionicons name="cellular-outline" size={13} color="#64748B" />
+                <Ionicons name="cellular-outline" size={13} color={Colors.slate500} />
                 <Text style={styles.metaText}>{module.level}</Text>
               </View>
             </View>
@@ -98,13 +97,13 @@ export const PracticeModuleCard: React.FC<PracticeModuleCardProps> = ({
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 16,
     padding: 14,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
-    shadowColor: '#0F172A',
+    borderColor: Colors.divider,
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.04,
     shadowRadius: 6,
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     flex: 1,
     marginRight: 6,
   },
@@ -148,7 +147,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
     lineHeight: 16,
     marginBottom: 10,
   },
@@ -170,7 +169,7 @@ const styles = StyleSheet.create({
   },
   metaText: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
   },
   actionButton: {
@@ -181,22 +180,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   primaryActionButton: {
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
   },
   outlineActionButton: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderWidth: 1.5,
-    borderColor: '#0084FF',
+    borderColor: Colors.primary,
   },
   actionButtonText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
   },
   primaryActionText: {
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   outlineActionText: {
-    color: '#0084FF',
+    color: Colors.primary,
   },
 });
 

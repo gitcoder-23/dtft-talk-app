@@ -15,6 +15,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import { AppLogo } from '../../common/AppLogo';
 import { CustomButton } from '../../common/CustomButton';
 
@@ -83,7 +84,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
               style={styles.backButton}
               activeOpacity={0.7}
             >
-              <Ionicons name="arrow-back" size={24} color="#0084FF" />
+              <Ionicons name="arrow-back" size={24} color={Colors.primary} />
             </TouchableOpacity>
             <AppLogo size="small" />
           </View>
@@ -95,7 +96,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
               <Text style={styles.cardTitle}>Student Portal Login</Text>
               <Text style={styles.cardSubtitle}>
                 Enter your details to continue your spoken English journey on{' '}
-                <Text style={{ fontWeight: 'bold', color: '#0084FF' }}>DTFT Talk</Text>.
+                <Text style={{ fontWeight: 'bold', color: Colors.primary }}>DTFT Talk</Text>.
               </Text>
             </View>
 
@@ -113,7 +114,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
                   <Ionicons
                     name="call-outline"
                     size={16}
-                    color={authMethod === 'mobile' ? '#FFFFFF' : '#64748B'}
+                    color={authMethod === 'mobile' ? Colors.white : Colors.slate500}
                   />
                   <Text
                     style={[
@@ -136,7 +137,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
                   <Ionicons
                     name="mail-outline"
                     size={16}
-                    color={authMethod === 'email' ? '#FFFFFF' : '#64748B'}
+                    color={authMethod === 'email' ? Colors.white : Colors.slate500}
                   />
                   <Text
                     style={[
@@ -162,26 +163,26 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
                       style={styles.textInput}
                       keyboardType="phone-pad"
                       placeholder="Enter 10-digit mobile"
-                      placeholderTextColor="#94A3B8"
+                      placeholderTextColor={Colors.textMuted}
                       value={phoneNumber}
                       onChangeText={setPhoneNumber}
                       maxLength={10}
                     />
                     {phoneNumber.length > 0 && (
                       <TouchableOpacity onPress={() => setPhoneNumber('')}>
-                        <Ionicons name="close-circle" size={18} color="#94A3B8" />
+                        <Ionicons name="close-circle" size={18} color={Colors.textMuted} />
                       </TouchableOpacity>
                     )}
                   </View>
                 ) : (
                   <View style={styles.inputContainer}>
-                    <Ionicons name="mail-outline" size={20} color="#0084FF" style={styles.inputIcon} />
+                    <Ionicons name="mail-outline" size={20} color={Colors.primary} style={styles.inputIcon} />
                     <TextInput
                       style={styles.textInput}
                       keyboardType="email-address"
                       autoCapitalize="none"
                       placeholder="Enter student email"
-                      placeholderTextColor="#94A3B8"
+                      placeholderTextColor={Colors.textMuted}
                       value={email}
                       onChangeText={setEmail}
                     />
@@ -254,7 +255,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
                 activeOpacity={0.7}
                 onPress={handleGuestLogin}
               >
-                <Ionicons name="logo-google" size={18} color="#EA4335" />
+                <Ionicons name="logo-google" size={18} color={Colors.googleRed} />
                 <Text style={styles.socialBtnText}>Google</Text>
               </TouchableOpacity>
 
@@ -263,7 +264,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
                 activeOpacity={0.7}
                 onPress={handleGuestLogin}
               >
-                <Ionicons name="logo-apple" size={18} color="#0F172A" />
+                <Ionicons name="logo-apple" size={18} color={Colors.slate900} />
                 <Text style={styles.socialBtnText}>Apple</Text>
               </TouchableOpacity>
             </View>
@@ -281,7 +282,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
 
           {/* Footer Safe Shield */}
           <View style={styles.footerShield}>
-            <Ionicons name="shield-checkmark" size={18} color="#0084FF" />
+            <Ionicons name="shield-checkmark" size={18} color={Colors.primary} />
             <Text style={styles.footerShieldText}>Safe • Secure • Trusted</Text>
           </View>
         </ScrollView>
@@ -293,7 +294,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   container: {
     flex: 1,
@@ -312,24 +313,24 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,
     borderWidth: 1,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
   },
   authCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 24,
     padding: 22,
-    shadowColor: '#0F172A',
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
     shadowRadius: 12,
     elevation: 3,
     borderWidth: 1,
-    borderColor: '#F1F5F9',
+    borderColor: Colors.borderLight,
   },
   headerArea: {
     marginBottom: 20,
@@ -337,17 +338,17 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: Typography.size.xxl,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     marginBottom: 6,
   },
   cardSubtitle: {
     fontSize: Typography.size.sm,
-    color: '#64748B',
+    color: Colors.slate500,
     lineHeight: 20,
   },
   toggleRow: {
     flexDirection: 'row',
-    backgroundColor: '#F1F5F9',
+    backgroundColor: Colors.borderLight,
     borderRadius: 14,
     padding: 4,
     marginBottom: 20,
@@ -362,8 +363,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   toggleTabActive: {
-    backgroundColor: '#0084FF',
-    shadowColor: '#0084FF',
+    backgroundColor: Colors.primary,
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -372,10 +373,10 @@ const styles = StyleSheet.create({
   toggleTabText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   toggleTabTextActive: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontWeight: Typography.weight.bold,
   },
   inputsSection: {
@@ -385,31 +386,31 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1.5,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
     borderRadius: 16,
     paddingHorizontal: 12,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: Colors.gray50,
     height: 52,
   },
   countryCodeBadge: {
     paddingRight: 10,
     borderRightWidth: 1,
-    borderRightColor: '#CBD5E1',
+    borderRightColor: Colors.slate300,
     marginRight: 10,
   },
   countryCodeText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1.5,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
     borderRadius: 16,
     paddingHorizontal: 14,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: Colors.gray50,
     height: 52,
   },
   inputIcon: {
@@ -418,7 +419,7 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     fontSize: Typography.size.md,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     fontWeight: Typography.weight.medium,
   },
   actionBtn: {
@@ -434,12 +435,12 @@ const styles = StyleSheet.create({
   },
   otpPromptText: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   editTargetText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   pinBoxesRow: {
     flexDirection: 'row',
@@ -452,26 +453,26 @@ const styles = StyleSheet.create({
     height: 54,
     borderRadius: 14,
     borderWidth: 2,
-    borderColor: '#0084FF',
-    backgroundColor: '#F0F8FF',
+    borderColor: Colors.primary,
+    backgroundColor: Colors.aliceBlue,
     alignItems: 'center',
     justifyContent: 'center',
   },
   pinText: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   resendRow: {
     alignItems: 'center',
   },
   timerText: {
     fontSize: Typography.size.xs,
-    color: '#94A3B8',
+    color: Colors.textMuted,
   },
   resendActionText: {
     fontSize: Typography.size.xs,
-    color: '#0084FF',
+    color: Colors.primary,
     fontWeight: Typography.weight.bold,
   },
   dividerRow: {
@@ -482,12 +483,12 @@ const styles = StyleSheet.create({
   dividerLine: {
     flex: 1,
     height: 1,
-    backgroundColor: '#E2E8F0',
+    backgroundColor: Colors.border,
   },
   dividerText: {
     paddingHorizontal: 12,
     fontSize: Typography.size.xs,
-    color: '#94A3B8',
+    color: Colors.textMuted,
   },
   socialButtonsRow: {
     flexDirection: 'row',
@@ -500,15 +501,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
     borderWidth: 1,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
     borderRadius: 14,
     paddingVertical: 12,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   socialBtnText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.semiBold,
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   guestLink: {
     alignItems: 'center',
@@ -517,7 +518,7 @@ const styles = StyleSheet.create({
   guestLinkText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   footerShield: {
     flexDirection: 'row',
@@ -528,7 +529,7 @@ const styles = StyleSheet.create({
   },
   footerShieldText: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
   },
 });

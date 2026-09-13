@@ -2,46 +2,123 @@ export const Colors = {
   // Brand Main Colors
   primary: '#0084FF',
   primaryDark: '#0066CC',
+  primaryDarker: '#005CE6',
+  primaryBlueDark: '#0062E0',
   primaryLight: '#E8F4FD',
-  primaryGradient: ['#0084FF', '#0062E0'] as const,
+  primaryLighter: '#E6F4FE',
+  primarySoft: '#EBF5FF',
+  aliceBlue: '#F0F8FF',
 
-  // Brand Quadrant Accents
+  // Sky / Light Blue Accents
+  sky50Soft: '#F0F9FF',
+  sky50: '#E0F2FE',
+  sky100: '#E1F3FD',
+  sky150: '#C7E8FD',
+  sky200: '#BAE6FD',
+  blue50: '#E3F2FD',
+  blue100: '#BFDBFE',
+  blue200: '#93C5FD',
+  blue600: '#1E88E5',
+  blue700: '#1976D2',
+
+  // Brand Quadrant Accents (Speech Bubble & 4-Circle Logo)
   brandBlue: '#0084FF',
   brandRed: '#FF3B30',
   brandGreen: '#00C853',
   brandYellow: '#FFB300',
   brandDark: '#0A2540',
+  circleRed: '#F44336',
+  circleCyan: '#00BCD4',
+  circleAmber: '#FFC107',
+  circleBlue: '#1E88E5',
 
-  // Secondary Accents
+  // Secondary Accents & Alerts
   secondary: '#FF9500',
   secondaryLight: '#FFF4E6',
+  orange: '#FF9500',
+  orange500: '#FF9800',
+  orange700: '#F57C00',
+  orange900: '#E65100',
+  orange50: '#FFF3E0',
+
   warning: '#FFB300',
   warningLight: '#FEF9E7',
+  amber: '#FFC107',
+  amber200: '#FDE68A',
+  amber300: '#FCD34D',
+  amber500: '#F59E0B',
+  amber800: '#B45309',
+  amber50: '#FFF8E1',
+
   danger: '#FF3B30',
   dangerLight: '#FFF0F2',
+  dangerDark: '#D32F2F',
+  red500: '#F44336',
+  red600: '#E53935',
+  red50: '#FFEBEE',
+  redLight: '#FFEBEB',
+  rose600: '#E11D48',
+  googleRed: '#EA4335',
+
   success: '#00C853',
   successLight: '#EAF7EE',
-  purple: '#8E24AA',
-  purpleLight: '#F4EFFB',
+  successLighter: '#E8F5E9',
+  successDark: '#2E7D32',
+  emerald: '#10B981',
+  mint50: '#E8F8F5',
+  mintDark: '#00897B',
   teal: '#00ACC1',
   tealLight: '#E0F7FA',
+  tealDark: '#00838F',
+  cyan: '#00BCD4',
+
+  purple: '#8E24AA',
+  purpleLight: '#F4EFFB',
+  purple50: '#F3E5F5',
   indigo: '#3949AB',
   indigoLight: '#EDE7F6',
 
-  // Neutrals
+  // Neutrals & Base
   white: '#FFFFFF',
+  black: '#000000',
+  transparent: 'transparent',
   background: '#F8FAFC',
   backgroundSecondary: '#F1F5F9',
   card: '#FFFFFF',
   textPrimary: '#0F172A',
   textSecondary: '#475569',
   textMuted: '#94A3B8',
+  textSubtle: '#64748B',
+  slate900: '#0F172A',
+  slate800: '#1E293B',
+  slate700: '#334155',
+  slate600: '#475569',
+  slate500: '#64748B',
+  slate400: '#94A3B8',
+  slate300: '#CBD5E1',
+  slate200: '#E2E8F0',
+  slate100: '#F1F5F9',
+  slate50: '#F8FAFC',
+  gray50: '#FAFAFA',
   border: '#E2E8F0',
   borderLight: '#F1F5F9',
   divider: '#EEF2F6',
 
   // Shadows
   shadowColor: '#0F172A',
+  shadowLight: 'rgba(0,0,0,0.04)',
+
+  // Gradients
+  primaryGradient: ['#0084FF', '#0062E0'] as const,
+  buttonGradient: ['#0084FF', '#005CE6'] as const,
+
+  // Alpha / Opacities
+  whiteAlpha20: 'rgba(255, 255, 255, 0.2)',
+  whiteAlpha25: 'rgba(255, 255, 255, 0.25)',
+  whiteAlpha30: 'rgba(255, 255, 255, 0.3)',
+  whiteAlpha70: 'rgba(255, 255, 255, 0.7)',
+  whiteAlpha90: 'rgba(255, 255, 255, 0.9)',
+  brandRedAlpha80: 'rgba(255, 59, 48, 0.8)',
 };
 
 export default Colors;

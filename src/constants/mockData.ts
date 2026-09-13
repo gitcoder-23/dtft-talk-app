@@ -1,3 +1,5 @@
+import { Colors } from './color';
+
 export interface StudentProfile {
   name: string;
   id: string;
@@ -99,12 +101,12 @@ export const CURRENT_STUDENT: StudentProfile = {
 };
 
 export const HOME_QUICK_CATEGORIES: QuickCategory[] = [
-  { id: '1', title: 'My Notes', icon: 'document-text', color: '#00C853', bgColor: '#EAF7EE', targetScreen: 'Notes' },
-  { id: '2', title: 'Grammar Practice', icon: 'book', color: '#FF3B30', bgColor: '#FFF0F2', targetScreen: 'Practice' },
-  { id: '3', title: 'Speaking Practice', icon: 'mic', color: '#0084FF', bgColor: '#E8F4FD', targetScreen: 'Practice' },
-  { id: '4', title: 'Listening Practice', icon: 'headset', color: '#FFB300', bgColor: '#FEF9E7', targetScreen: 'Practice' },
-  { id: '5', title: 'Vocabulary Builder', icon: 'text', color: '#8E24AA', bgColor: '#F4EFFB', targetScreen: 'Practice' },
-  { id: '6', title: 'Conversation Practice', icon: 'chatbubbles', color: '#FF9500', bgColor: '#FFF4E6', targetScreen: 'Practice' },
+  { id: '1', title: 'My Notes', icon: 'document-text', color: Colors.success, bgColor: Colors.successLight, targetScreen: 'Notes' },
+  { id: '2', title: 'Grammar Practice', icon: 'book', color: Colors.danger, bgColor: Colors.dangerLight, targetScreen: 'Practice' },
+  { id: '3', title: 'Speaking Practice', icon: 'mic', color: Colors.primary, bgColor: Colors.primaryLight, targetScreen: 'Practice' },
+  { id: '4', title: 'Listening Practice', icon: 'headset', color: Colors.warning, bgColor: Colors.warningLight, targetScreen: 'Practice' },
+  { id: '5', title: 'Vocabulary Builder', icon: 'text', color: Colors.purple, bgColor: Colors.purpleLight, targetScreen: 'Practice' },
+  { id: '6', title: 'Conversation Practice', icon: 'chatbubbles', color: Colors.secondary, bgColor: Colors.secondaryLight, targetScreen: 'Practice' },
 ];
 
 export const CONTINUE_LEARNING_ITEM = {
@@ -119,21 +121,21 @@ export const CONTINUE_LEARNING_ITEM = {
 };
 
 export const TODAY_PRACTICE_ITEMS: PracticeCardItem[] = [
-  { id: '1', title: 'Speaking', subtitle: 'Record & Improve', icon: 'mic', color: '#FF3B30', bgColor: '#FFF0F2', actionText: 'Start →' },
-  { id: '2', title: 'Listening', subtitle: 'Listen & Answer', icon: 'headset', color: '#0084FF', bgColor: '#E8F4FD', actionText: 'Start →' },
-  { id: '3', title: 'Grammar', subtitle: 'Quick Practice', icon: 'document-text', color: '#00C853', bgColor: '#EAF7EE', actionText: 'Start →' },
-  { id: '4', title: 'Daily Quiz', subtitle: 'Test Your Skills', icon: 'help-circle', color: '#8E24AA', bgColor: '#F4EFFB', actionText: 'Start →' },
+  { id: '1', title: 'Speaking', subtitle: 'Record & Improve', icon: 'mic', color: Colors.danger, bgColor: Colors.dangerLight, actionText: 'Start →' },
+  { id: '2', title: 'Listening', subtitle: 'Listen & Answer', icon: 'headset', color: Colors.primary, bgColor: Colors.primaryLight, actionText: 'Start →' },
+  { id: '3', title: 'Grammar', subtitle: 'Quick Practice', icon: 'document-text', color: Colors.success, bgColor: Colors.successLight, actionText: 'Start →' },
+  { id: '4', title: 'Daily Quiz', subtitle: 'Test Your Skills', icon: 'help-circle', color: Colors.purple, bgColor: Colors.purpleLight, actionText: 'Start →' },
 ];
 
 export const POPULAR_TOPICS: TopicItem[] = [
-  { id: '1', title: 'Tenses', icon: 'time', color: '#0084FF', bgColor: '#E8F4FD' },
-  { id: '2', title: 'Articles', icon: 'document', color: '#FFB300', bgColor: '#FEF9E7' },
-  { id: '3', title: 'Prepositions', icon: 'location', color: '#00C853', bgColor: '#EAF7EE' },
-  { id: '4', title: 'Sentence Formation', icon: 'create', color: '#FF3B30', bgColor: '#FFF0F2' },
-  { id: '5', title: 'Active & Passive Voice', icon: 'swap-horizontal', color: '#8E24AA', bgColor: '#F4EFFB' },
-  { id: '6', title: 'Modal Verbs', icon: 'star', color: '#00BCD4', bgColor: '#E0F7FA' },
-  { id: '7', title: 'Conditionals', icon: 'git-branch', color: '#FF9500', bgColor: '#FFF4E6' },
-  { id: '8', title: 'Phrasal Verbs', icon: 'link', color: '#3949AB', bgColor: '#EDE7F6' },
+  { id: '1', title: 'Tenses', icon: 'time', color: Colors.primary, bgColor: Colors.primaryLight },
+  { id: '2', title: 'Articles', icon: 'document', color: Colors.warning, bgColor: Colors.warningLight },
+  { id: '3', title: 'Prepositions', icon: 'location', color: Colors.success, bgColor: Colors.successLight },
+  { id: '4', title: 'Sentence Formation', icon: 'create', color: Colors.danger, bgColor: Colors.dangerLight },
+  { id: '5', title: 'Active & Passive Voice', icon: 'swap-horizontal', color: Colors.purple, bgColor: Colors.purpleLight },
+  { id: '6', title: 'Modal Verbs', icon: 'star', color: Colors.cyan, bgColor: Colors.tealLight },
+  { id: '7', title: 'Conditionals', icon: 'git-branch', color: Colors.secondary, bgColor: Colors.secondaryLight },
+  { id: '8', title: 'Phrasal Verbs', icon: 'link', color: Colors.indigo, bgColor: Colors.indigoLight },
 ];
 
 export const ALL_NOTES: NoteItem[] = [
@@ -146,8 +148,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '2.5 MB',
     icon: 'book',
-    color: '#0084FF',
-    bgColor: '#E8F4FD',
+    color: Colors.primary,
+    bgColor: Colors.primaryLight,
   },
   {
     id: 'n2',
@@ -158,8 +160,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '3.2 MB',
     icon: 'time',
-    color: '#00C853',
-    bgColor: '#EAF7EE',
+    color: Colors.success,
+    bgColor: Colors.successLight,
   },
   {
     id: 'n3',
@@ -170,8 +172,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '4.1 MB',
     icon: 'text',
-    color: '#FFB300',
-    bgColor: '#FEF9E7',
+    color: Colors.warning,
+    bgColor: Colors.warningLight,
   },
   {
     id: 'n4',
@@ -182,8 +184,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '2.8 MB',
     icon: 'chatbubbles',
-    color: '#8E24AA',
-    bgColor: '#F4EFFB',
+    color: Colors.purple,
+    bgColor: Colors.purpleLight,
   },
   {
     id: 'n5',
@@ -194,8 +196,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '2.3 MB',
     icon: 'mic',
-    color: '#0084FF',
-    bgColor: '#E8F4FD',
+    color: Colors.primary,
+    bgColor: Colors.primaryLight,
   },
   {
     id: 'n6',
@@ -206,8 +208,8 @@ export const ALL_NOTES: NoteItem[] = [
     fileType: 'PDF',
     fileSize: '1.9 MB',
     icon: 'headset',
-    color: '#00BCD4',
-    bgColor: '#E0F7FA',
+    color: Colors.cyan,
+    bgColor: Colors.tealLight,
   },
 ];
 
@@ -222,8 +224,8 @@ export const SPEAKING_MODULES: PracticeModuleItem[] = [
     level: 'Beginner',
     actionText: 'Start →',
     icon: 'person',
-    color: '#0084FF',
-    bgColor: '#E8F4FD',
+    color: Colors.primary,
+    bgColor: Colors.primaryLight,
   },
   {
     id: 'sm2',
@@ -235,8 +237,8 @@ export const SPEAKING_MODULES: PracticeModuleItem[] = [
     level: 'Beginner',
     actionText: 'Continue →',
     icon: 'chatbubbles',
-    color: '#00C853',
-    bgColor: '#EAF7EE',
+    color: Colors.success,
+    bgColor: Colors.successLight,
   },
   {
     id: 'sm3',
@@ -248,8 +250,8 @@ export const SPEAKING_MODULES: PracticeModuleItem[] = [
     level: 'Intermediate',
     actionText: 'Start →',
     icon: 'briefcase',
-    color: '#8E24AA',
-    bgColor: '#F4EFFB',
+    color: Colors.purple,
+    bgColor: Colors.purpleLight,
   },
   {
     id: 'sm4',
@@ -261,8 +263,8 @@ export const SPEAKING_MODULES: PracticeModuleItem[] = [
     level: 'Beginner',
     actionText: 'Start →',
     icon: 'airplane',
-    color: '#FFB300',
-    bgColor: '#FEF9E7',
+    color: Colors.warning,
+    bgColor: Colors.warningLight,
   },
   {
     id: 'sm5',
@@ -274,8 +276,8 @@ export const SPEAKING_MODULES: PracticeModuleItem[] = [
     level: 'Intermediate',
     actionText: 'Start →',
     icon: 'people',
-    color: '#3949AB',
-    bgColor: '#EDE7F6',
+    color: Colors.indigo,
+    bgColor: Colors.indigoLight,
   },
 ];
 
@@ -302,17 +304,17 @@ export const COMPLETE_COURSE_DATA = {
     'Prepare for interviews & real-life situations',
   ],
   curriculum: [
-    { id: 1, step: '1', title: 'Greetings & Introduction', lessons: '8 Lessons', duration: '45 min', color: '#0084FF' },
-    { id: 2, step: '2', title: 'Daily Conversations', lessons: '10 Lessons', duration: '60 min', color: '#00C853' },
-    { id: 3, step: '3', title: 'Grammar Basics', lessons: '12 Lessons', duration: '90 min', color: '#FF9800' },
-    { id: 4, step: '4', title: 'Vocabulary Building', lessons: '10 Lessons', duration: '75 min', color: '#FF3B30' },
-    { id: 5, step: '5', title: 'Pronunciation Practice', lessons: '8 Lessons', duration: '60 min', color: '#8E24AA' },
+    { id: 1, step: '1', title: 'Greetings & Introduction', lessons: '8 Lessons', duration: '45 min', color: Colors.primary },
+    { id: 2, step: '2', title: 'Daily Conversations', lessons: '10 Lessons', duration: '60 min', color: Colors.success },
+    { id: 3, step: '3', title: 'Grammar Basics', lessons: '12 Lessons', duration: '90 min', color: Colors.orange500 },
+    { id: 4, step: '4', title: 'Vocabulary Building', lessons: '10 Lessons', duration: '75 min', color: Colors.danger },
+    { id: 5, step: '5', title: 'Pronunciation Practice', lessons: '8 Lessons', duration: '60 min', color: Colors.purple },
   ] as CurriculumItem[],
   highlights: [
-    { id: 1, title: 'Audio Lessons & Practice', icon: 'mic', color: '#8E24AA', bgColor: '#F4EFFB' },
-    { id: 2, title: 'PDF Notes (Downloadable)', icon: 'document-text', color: '#00C853', bgColor: '#EAF7EE' },
-    { id: 3, title: 'Real-Life Examples', icon: 'play-circle', color: '#FF3B30', bgColor: '#FFF0F2' },
-    { id: 4, title: 'Certificate of Completion', icon: 'ribbon', color: '#FFB300', bgColor: '#FEF9E7' },
+    { id: 1, title: 'Audio Lessons & Practice', icon: 'mic', color: Colors.purple, bgColor: Colors.purpleLight },
+    { id: 2, title: 'PDF Notes (Downloadable)', icon: 'document-text', color: Colors.success, bgColor: Colors.successLight },
+    { id: 3, title: 'Real-Life Examples', icon: 'play-circle', color: Colors.danger, bgColor: Colors.dangerLight },
+    { id: 4, title: 'Certificate of Completion', icon: 'ribbon', color: Colors.warning, bgColor: Colors.warningLight },
   ] as CourseHighlight[],
   instructor: {
     name: "Ananya Ma'am",
@@ -328,14 +330,14 @@ export const COMPLETE_COURSE_DATA = {
         name: 'Riya Das',
         stars: 5,
         comment: 'Very helpful and easy to understand. Now I can speak with more confidence!',
-        avatarColor: '#E8F4FD',
+        avatarColor: Colors.primaryLight,
       },
       {
         id: 2,
         name: 'Rahul Sen',
         stars: 5,
         comment: 'The practice sessions are really good. This course is worth it!',
-        avatarColor: '#FFF0F2',
+        avatarColor: Colors.dangerLight,
       },
     ] as Testimonial[],
   },

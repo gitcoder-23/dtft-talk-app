@@ -31,22 +31,22 @@ export const AppLogo: React.FC<AppLogoProps> = ({
         style={styles.fourCircleContainer}
       >
         <View style={styles.circlesRow}>
-          <View style={[styles.circleBadge, { backgroundColor: '#F44336' }]}>
+          <View style={[styles.circleBadge, { backgroundColor: Colors.circleRed }]}>
             <Text style={styles.circleLetter}>D</Text>
           </View>
-          <View style={[styles.circleBadge, { backgroundColor: '#00BCD4' }]}>
+          <View style={[styles.circleBadge, { backgroundColor: Colors.circleCyan }]}>
             <Text style={styles.circleLetter}>T</Text>
           </View>
-          <View style={[styles.circleBadge, { backgroundColor: '#FFC107' }]}>
+          <View style={[styles.circleBadge, { backgroundColor: Colors.circleAmber }]}>
             <Text style={styles.circleLetter}>F</Text>
           </View>
-          <View style={[styles.circleBadge, { backgroundColor: '#1E88E5' }]}>
+          <View style={[styles.circleBadge, { backgroundColor: Colors.circleBlue }]}>
             <Text style={styles.circleLetter}>T</Text>
           </View>
         </View>
         <View style={styles.fourCircleTextWrapper}>
           <Text style={styles.fourCircleTitle}>
-            DTFT <Text style={{ color: '#FF9500' }}>TALK</Text>
+            DTFT <Text style={{ color: Colors.secondary }}>TALK</Text>
           </Text>
           {showTagline && (
             <Text style={styles.fourCircleTagline}>
@@ -95,7 +95,7 @@ export const AppLogo: React.FC<AppLogoProps> = ({
               fill={Colors.brandYellow}
             />
             {/* Inner White Circle */}
-            <Circle cx="50" cy="50" r="26" fill="#FFFFFF" />
+            <Circle cx="50" cy="50" r="26" fill={Colors.white} />
             {/* Inner Mic / Sound Wave Graphic */}
             <Rect x="44" y="36" width="12" height="18" rx="6" fill={Colors.brandDark} />
             <Path
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   titleDtft: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#0062E0',
+    color: Colors.primaryBlueDark,
     letterSpacing: -0.5,
   },
   titleDtftSmall: {
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   titleTalk: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#FF9500',
+    color: Colors.secondary,
     letterSpacing: -0.5,
   },
   titleTalkSmall: {
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.15,
     shadowRadius: 4,
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   circleLetter: {
     fontSize: 24,
     fontWeight: Typography.weight.extraBold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   fourCircleTextWrapper: {
     alignItems: 'center',

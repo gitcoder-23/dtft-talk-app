@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import { CURRENT_STUDENT } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
 import { CircularProgress } from '../../common/CircularProgress';
@@ -39,7 +40,7 @@ export const ProgressScreen: React.FC = () => {
           <View style={styles.streakTopRow}>
             <View style={styles.streakLeft}>
               <View style={styles.flameCircle}>
-                <Ionicons name="flame" size={28} color="#FF9800" />
+                <Ionicons name="flame" size={28} color={Colors.orange500} />
               </View>
               <View>
                 <Text style={styles.streakNumberText}>
@@ -65,7 +66,7 @@ export const ProgressScreen: React.FC = () => {
                   <Ionicons
                     name="checkmark"
                     size={14}
-                    color={idx < 5 ? '#FFFFFF' : '#FF9800'}
+                    color={idx < 5 ? Colors.white : Colors.orange500}
                   />
                 </View>
                 <Text style={styles.dayLabel}>{day}</Text>
@@ -80,7 +81,7 @@ export const ProgressScreen: React.FC = () => {
           <View style={styles.metricCard}>
             <View style={styles.metricTop}>
               <Text style={styles.metricLabel}>Speaking Accuracy</Text>
-              <Ionicons name="mic-outline" size={18} color="#0084FF" />
+              <Ionicons name="mic-outline" size={18} color={Colors.primary} />
             </View>
             <View style={styles.circularWrapper}>
               <CircularProgress percentage={68} size={64} strokeWidth={6} />
@@ -92,7 +93,7 @@ export const ProgressScreen: React.FC = () => {
           <View style={styles.metricCard}>
             <View style={styles.metricTop}>
               <Text style={styles.metricLabel}>Practice Hours</Text>
-              <Ionicons name="time-outline" size={18} color="#00C853" />
+              <Ionicons name="time-outline" size={18} color={Colors.success} />
             </View>
             <Text style={styles.bigMetricNumber}>14.5</Text>
             <Text style={styles.metricUnit}>Hours Recorded</Text>
@@ -103,7 +104,7 @@ export const ProgressScreen: React.FC = () => {
           <View style={styles.metricCard}>
             <View style={styles.metricTop}>
               <Text style={styles.metricLabel}>Vocabulary</Text>
-              <Ionicons name="book-outline" size={18} color="#FFB300" />
+              <Ionicons name="book-outline" size={18} color={Colors.warning} />
             </View>
             <Text style={styles.bigMetricNumber}>480</Text>
             <Text style={styles.metricUnit}>Words Mastered</Text>
@@ -114,7 +115,7 @@ export const ProgressScreen: React.FC = () => {
           <View style={styles.metricCard}>
             <View style={styles.metricTop}>
               <Text style={styles.metricLabel}>Lessons Done</Text>
-              <Ionicons name="checkmark-done-outline" size={18} color="#8E24AA" />
+              <Ionicons name="checkmark-done-outline" size={18} color={Colors.purple} />
             </View>
             <Text style={styles.bigMetricNumber}>24</Text>
             <Text style={styles.metricUnit}>Out of 45 Lessons</Text>
@@ -127,29 +128,29 @@ export const ProgressScreen: React.FC = () => {
           <Text style={styles.sectionTitle}>Earned Badges</Text>
           <View style={styles.badgesRow}>
             <View style={styles.badgeItem}>
-              <View style={[styles.badgeCircle, { backgroundColor: '#E8F4FD' }]}>
-                <Ionicons name="rocket-outline" size={24} color="#0084FF" />
+              <View style={[styles.badgeCircle, { backgroundColor: Colors.primaryLight }]}>
+                <Ionicons name="rocket-outline" size={24} color={Colors.primary} />
               </View>
               <Text style={styles.badgeTitle}>Early Starter</Text>
             </View>
 
             <View style={styles.badgeItem}>
-              <View style={[styles.badgeCircle, { backgroundColor: '#FEF9E7' }]}>
-                <Ionicons name="flame-outline" size={24} color="#FF9800" />
+              <View style={[styles.badgeCircle, { backgroundColor: Colors.warningLight }]}>
+                <Ionicons name="flame-outline" size={24} color={Colors.orange500} />
               </View>
               <Text style={styles.badgeTitle}>7-Day Streak</Text>
             </View>
 
             <View style={styles.badgeItem}>
-              <View style={[styles.badgeCircle, { backgroundColor: '#EAF7EE' }]}>
-                <Ionicons name="mic-outline" size={24} color="#00C853" />
+              <View style={[styles.badgeCircle, { backgroundColor: Colors.successLight }]}>
+                <Ionicons name="mic-outline" size={24} color={Colors.success} />
               </View>
               <Text style={styles.badgeTitle}>Fluent Voice</Text>
             </View>
 
             <View style={styles.badgeItem}>
-              <View style={[styles.badgeCircle, { backgroundColor: '#F4EFFB' }]}>
-                <Ionicons name="trophy-outline" size={24} color="#8E24AA" />
+              <View style={[styles.badgeCircle, { backgroundColor: Colors.purpleLight }]}>
+                <Ionicons name="trophy-outline" size={24} color={Colors.purple} />
               </View>
               <Text style={styles.badgeTitle}>Top 10%</Text>
             </View>
@@ -163,11 +164,11 @@ export const ProgressScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     paddingHorizontal: 16,
@@ -180,19 +181,19 @@ const styles = StyleSheet.create({
   screenHeading: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   screenSubtitle: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
   },
   streakCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 20,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
     marginBottom: 16,
   },
   streakTopRow: {
@@ -209,18 +210,18 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: Colors.amber50,
     alignItems: 'center',
     justifyContent: 'center',
   },
   streakNumberText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   streakSubText: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
   },
   weekRow: {
@@ -228,7 +229,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 8,
     borderTopWidth: 1,
-    borderTopColor: '#F8FAFC',
+    borderTopColor: Colors.background,
   },
   dayCol: {
     alignItems: 'center',
@@ -243,16 +244,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   dayCircleCompleted: {
-    backgroundColor: '#00C853',
-    borderColor: '#00C853',
+    backgroundColor: Colors.success,
+    borderColor: Colors.success,
   },
   dayCircleActive: {
-    backgroundColor: '#FFF8E1',
-    borderColor: '#FF9800',
+    backgroundColor: Colors.amber50,
+    borderColor: Colors.orange500,
   },
   dayLabel: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   metricsGrid: {
     flexDirection: 'row',
@@ -262,11 +263,11 @@ const styles = StyleSheet.create({
   },
   metricCard: {
     width: (width - 44) / 2,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   metricTop: {
     flexDirection: 'row',
@@ -277,7 +278,7 @@ const styles = StyleSheet.create({
   metricLabel: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   circularWrapper: {
     alignItems: 'center',
@@ -286,31 +287,31 @@ const styles = StyleSheet.create({
   bigMetricNumber: {
     fontSize: 26,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   metricUnit: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.semiBold,
-    color: '#334155',
+    color: Colors.slate700,
     marginTop: 2,
   },
   metricNote: {
     fontSize: 10,
-    color: '#0084FF',
+    color: Colors.primary,
     marginTop: 6,
     fontWeight: Typography.weight.medium,
   },
   achievementsCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 20,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   sectionTitle: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     marginBottom: 12,
   },
   badgesRow: {
@@ -331,7 +332,7 @@ const styles = StyleSheet.create({
   badgeTitle: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.semiBold,
-    color: '#334155',
+    color: Colors.slate700,
   },
 });
 

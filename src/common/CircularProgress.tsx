@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
-import { Colors } from '../constants/color';
 import { Typography } from '../constants/fonts';
+import { Colors } from '../constants/color';
 
 interface CircularProgressProps {
   percentage: number;
@@ -16,8 +16,8 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
   percentage,
   size = 64,
   strokeWidth = 6,
-  progressColor = '#00C853',
-  trackColor = '#E2E8F0',
+  progressColor = Colors.success,
+  trackColor = Colors.border,
 }) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   percentText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
 });
 

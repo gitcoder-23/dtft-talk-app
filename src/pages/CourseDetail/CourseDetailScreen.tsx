@@ -17,6 +17,7 @@ import Svg, {
   Path,
 } from 'react-native-svg';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import { AssetImages } from '../../constants/assetImages';
 import { COMPLETE_COURSE_DATA } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
@@ -83,7 +84,7 @@ export const CourseDetailScreen: React.FC = () => {
               <Text style={styles.beginnerBadgeText}>{COMPLETE_COURSE_DATA.tag}</Text>
             </View>
             <TouchableOpacity style={styles.shareBtn} onPress={handleShare}>
-              <Ionicons name="share-social-outline" size={18} color="#0084FF" />
+              <Ionicons name="share-social-outline" size={18} color={Colors.primary} />
             </TouchableOpacity>
           </View>
 
@@ -96,7 +97,7 @@ export const CourseDetailScreen: React.FC = () => {
               {/* Stats Row */}
               <View style={styles.statsRow}>
                 <View style={styles.statItem}>
-                  <Ionicons name="time-outline" size={14} color="#0084FF" />
+                  <Ionicons name="time-outline" size={14} color={Colors.primary} />
                   <View style={styles.statTextCol}>
                     <Text style={styles.statLabel}>Duration</Text>
                     <Text style={styles.statValue}>{COMPLETE_COURSE_DATA.duration}</Text>
@@ -104,7 +105,7 @@ export const CourseDetailScreen: React.FC = () => {
                 </View>
 
                 <View style={styles.statItem}>
-                  <Ionicons name="bar-chart-outline" size={14} color="#00C853" />
+                  <Ionicons name="bar-chart-outline" size={14} color={Colors.success} />
                   <View style={styles.statTextCol}>
                     <Text style={styles.statLabel}>Level</Text>
                     <Text style={styles.statValue}>{COMPLETE_COURSE_DATA.level}</Text>
@@ -112,7 +113,7 @@ export const CourseDetailScreen: React.FC = () => {
                 </View>
 
                 <View style={styles.statItem}>
-                  <Ionicons name="people-outline" size={14} color="#FF9800" />
+                  <Ionicons name="people-outline" size={14} color={Colors.orange500} />
                   <View style={styles.statTextCol}>
                     <Text style={styles.statLabel}>Students</Text>
                     <Text style={styles.statValue}>{COMPLETE_COURSE_DATA.students}</Text>
@@ -125,25 +126,25 @@ export const CourseDetailScreen: React.FC = () => {
             <View style={styles.mascotArtBox}>
               <Svg width="130" height="150" viewBox="0 0 140 160">
                 {/* Big Ben Outline in background */}
-                <Path d="M 108 160 L 108 85 L 114 75 L 120 85 L 120 160 Z" fill="#BAE6FD" opacity={0.6} />
+                <Path d="M 108 160 L 108 85 L 114 75 L 120 85 L 120 160 Z" fill={Colors.sky200} opacity={0.6} />
 
                 {/* Boy Mascot in Blue Hoodie */}
-                <Circle cx="70" cy="95" r="32" fill="#0084FF" />
-                <Circle cx="70" cy="65" r="25" fill="#FCD34D" />
-                <Path d="M 47 62 C 47 38 93 38 93 62 C 90 54 80 50 70 52 C 60 50 50 54 47 62 Z" fill="#1E293B" />
-                <Circle cx="63" cy="63" r="3" fill="#1E293B" />
-                <Circle cx="77" cy="63" r="3" fill="#1E293B" />
-                <Path d="M 65 72 Q 70 78 75 72" stroke="#E11D48" strokeWidth="2" fill="none" strokeLinecap="round" />
+                <Circle cx="70" cy="95" r="32" fill={Colors.primary} />
+                <Circle cx="70" cy="65" r="25" fill={Colors.amber300} />
+                <Path d="M 47 62 C 47 38 93 38 93 62 C 90 54 80 50 70 52 C 60 50 50 54 47 62 Z" fill={Colors.slate800} />
+                <Circle cx="63" cy="63" r="3" fill={Colors.slate800} />
+                <Circle cx="77" cy="63" r="3" fill={Colors.slate800} />
+                <Path d="M 65 72 Q 70 78 75 72" stroke={Colors.rose600} strokeWidth="2" fill="none" strokeLinecap="round" />
 
                 {/* Book: "Speak English" */}
-                <Rect x="54" y="102" width="34" height="32" rx="4" fill="#005CE6" stroke="#FFFFFF" strokeWidth="1.5" />
-                <Rect x="56" y="104" width="30" height="3" fill="#FFC107" />
+                <Rect x="54" y="102" width="34" height="32" rx="4" fill={Colors.primaryDarker} stroke={Colors.white} strokeWidth="1.5" />
+                <Rect x="56" y="104" width="30" height="3" fill={Colors.amber} />
 
                 {/* Floating Chips: Listen, Speak, Practice, Grow */}
-                <Circle cx="20" cy="60" r="14" fill="#0084FF" />
-                <Circle cx="118" cy="48" r="14" fill="#FF3B30" />
-                <Circle cx="122" cy="80" r="14" fill="#FFB300" />
-                <Circle cx="120" cy="115" r="14" fill="#00C853" />
+                <Circle cx="20" cy="60" r="14" fill={Colors.primary} />
+                <Circle cx="118" cy="48" r="14" fill={Colors.danger} />
+                <Circle cx="122" cy="80" r="14" fill={Colors.warning} />
+                <Circle cx="120" cy="115" r="14" fill={Colors.success} />
               </Svg>
 
               {/* Text labels for bubbles */}
@@ -179,7 +180,7 @@ export const CourseDetailScreen: React.FC = () => {
                 <Ionicons
                   name={tab.icon as any}
                   size={15}
-                  color={activeTab === tab.id ? '#FFFFFF' : '#64748B'}
+                  color={activeTab === tab.id ? Colors.white : Colors.slate500}
                   style={{ marginRight: 6 }}
                 />
                 <Text
@@ -198,7 +199,7 @@ export const CourseDetailScreen: React.FC = () => {
         {/* Section: Course Overview */}
         <View style={styles.sectionCard}>
           <View style={styles.sectionTitleRow}>
-            <Ionicons name="book" size={20} color="#0084FF" />
+            <Ionicons name="book" size={20} color={Colors.primary} />
             <Text style={styles.sectionTitleText}>Course Overview</Text>
           </View>
 
@@ -209,7 +210,7 @@ export const CourseDetailScreen: React.FC = () => {
 
             {/* Sticky Quote Note */}
             <View style={styles.stickyNote}>
-              <Ionicons name="sparkles" size={14} color="#FFB300" style={styles.sparkleIcon} />
+              <Ionicons name="sparkles" size={14} color={Colors.warning} style={styles.sparkleIcon} />
               <Text style={styles.stickyNoteText}>
                 “Better English{'\n'}Brighter Future”
               </Text>
@@ -220,14 +221,14 @@ export const CourseDetailScreen: React.FC = () => {
         {/* Section: Key Learning Outcomes */}
         <View style={styles.sectionCard}>
           <View style={styles.sectionTitleRow}>
-            <Ionicons name="disc" size={20} color="#00C853" />
+            <Ionicons name="disc" size={20} color={Colors.success} />
             <Text style={styles.sectionTitleText}>Key Learning Outcomes</Text>
           </View>
 
           <View style={styles.outcomesGrid}>
             {COMPLETE_COURSE_DATA.keyOutcomes.map((outcome, index) => (
               <View key={index} style={styles.outcomeItem}>
-                <Ionicons name="checkmark-circle" size={18} color="#00C853" style={styles.checkIcon} />
+                <Ionicons name="checkmark-circle" size={18} color={Colors.success} style={styles.checkIcon} />
                 <Text style={styles.outcomeText}>{outcome}</Text>
               </View>
             ))}
@@ -238,7 +239,7 @@ export const CourseDetailScreen: React.FC = () => {
         <View style={styles.sectionCard}>
           <View style={styles.sectionTitleRowSpace}>
             <View style={styles.sectionTitleLeft}>
-              <Ionicons name="school" size={20} color="#8E24AA" />
+              <Ionicons name="school" size={20} color={Colors.purple} />
               <Text style={styles.sectionTitleText}>Course Curriculum</Text>
             </View>
             <TouchableOpacity>
@@ -265,7 +266,7 @@ export const CourseDetailScreen: React.FC = () => {
                   </Text>
                 </View>
 
-                <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+                <Ionicons name="chevron-forward" size={18} color={Colors.textMuted} />
               </TouchableOpacity>
             ))}
           </View>
@@ -274,7 +275,7 @@ export const CourseDetailScreen: React.FC = () => {
         {/* Section: Course Highlights */}
         <View style={styles.sectionCard}>
           <View style={styles.sectionTitleRow}>
-            <Ionicons name="star" size={20} color="#FFB300" />
+            <Ionicons name="star" size={20} color={Colors.warning} />
             <Text style={styles.sectionTitleText}>Course Highlights</Text>
           </View>
 
@@ -284,7 +285,7 @@ export const CourseDetailScreen: React.FC = () => {
                 key={highlight.id}
                 style={[styles.highlightBox, { backgroundColor: highlight.bgColor }]}
               >
-                <View style={[styles.highlightIconCircle, { backgroundColor: '#FFFFFF' }]}>
+                <View style={[styles.highlightIconCircle, { backgroundColor: Colors.white }]}>
                   <Ionicons name={highlight.icon as any} size={22} color={highlight.color} />
                 </View>
                 <Text style={styles.highlightTitle}>{highlight.title}</Text>
@@ -317,7 +318,7 @@ export const CourseDetailScreen: React.FC = () => {
         <View style={styles.sectionCard}>
           <View style={styles.sectionTitleRowSpace}>
             <View style={styles.sectionTitleLeft}>
-              <Ionicons name="star" size={20} color="#FFB300" />
+              <Ionicons name="star" size={20} color={Colors.warning} />
               <Text style={styles.sectionTitleText}>Student Reviews</Text>
             </View>
             <TouchableOpacity>
@@ -328,7 +329,7 @@ export const CourseDetailScreen: React.FC = () => {
           {/* Rating Summary */}
           <View style={styles.ratingSummaryRow}>
             <View style={styles.bigRatingBox}>
-              <Ionicons name="star" size={22} color="#FFB300" />
+              <Ionicons name="star" size={22} color={Colors.warning} />
               <Text style={styles.bigRatingNumber}>{COMPLETE_COURSE_DATA.reviews.average}</Text>
             </View>
             <Text style={styles.ratingCountText}>({COMPLETE_COURSE_DATA.reviews.totalCount})</Text>
@@ -346,7 +347,7 @@ export const CourseDetailScreen: React.FC = () => {
                     <Text style={styles.reviewerName}>{review.name}</Text>
                     <View style={styles.starsRow}>
                       {[1, 2, 3, 4, 5].map((s) => (
-                        <Ionicons key={s} name="star" size={13} color="#FFB300" />
+                        <Ionicons key={s} name="star" size={13} color={Colors.warning} />
                       ))}
                     </View>
                   </View>
@@ -365,7 +366,7 @@ export const CourseDetailScreen: React.FC = () => {
           activeOpacity={0.85}
           onPress={handleEnroll}
         >
-          <Ionicons name="school" size={20} color="#FFFFFF" style={{ marginRight: 8 }} />
+          <Ionicons name="school" size={20} color={Colors.white} style={{ marginRight: 8 }} />
           <Text style={styles.enrollCtaText}>
             {isEnrolled ? 'Enrolled ✓' : 'Enroll Now'}
           </Text>
@@ -386,11 +387,11 @@ export const CourseDetailScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     paddingBottom: 90,
@@ -399,10 +400,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 12,
     borderRadius: 22,
-    backgroundColor: '#E1F3FD',
+    backgroundColor: Colors.sky100,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#C7E8FD',
+    borderColor: Colors.sky150,
   },
   heroTopRow: {
     flexDirection: 'row',
@@ -411,7 +412,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   beginnerBadge: {
-    backgroundColor: '#8E24AA',
+    backgroundColor: Colors.purple,
     paddingHorizontal: 10,
     paddingVertical: 3,
     borderRadius: 12,
@@ -419,13 +420,13 @@ const styles = StyleSheet.create({
   beginnerBadgeText: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   shareBtn: {
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -440,13 +441,13 @@ const styles = StyleSheet.create({
   courseTitle: {
     fontSize: Typography.size.lg,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     lineHeight: 22,
     marginBottom: 4,
   },
   courseSub: {
     fontSize: Typography.size.xxs,
-    color: '#475569',
+    color: Colors.slate600,
     lineHeight: 14,
     marginBottom: 10,
   },
@@ -462,12 +463,12 @@ const styles = StyleSheet.create({
   statTextCol: {},
   statLabel: {
     fontSize: 9,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   statValue: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   mascotArtBox: {
     width: 120,
@@ -484,7 +485,7 @@ const styles = StyleSheet.create({
   bubbleTagText: {
     fontSize: 8,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   tabsRow: {
     marginTop: 14,
@@ -499,31 +500,31 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderWidth: 1,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
   },
   activeTabPill: {
-    backgroundColor: '#0084FF',
-    borderColor: '#0084FF',
+    backgroundColor: Colors.primary,
+    borderColor: Colors.primary,
   },
   tabPillText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   activeTabPillText: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontWeight: Typography.weight.bold,
   },
   sectionCard: {
     marginHorizontal: 16,
     marginTop: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   sectionTitleRow: {
     flexDirection: 'row',
@@ -545,12 +546,12 @@ const styles = StyleSheet.create({
   sectionTitleText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   viewAllText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   overviewRow: {
     flexDirection: 'row',
@@ -560,19 +561,19 @@ const styles = StyleSheet.create({
   overviewParagraph: {
     flex: 1,
     fontSize: Typography.size.xs,
-    color: '#475569',
+    color: Colors.slate600,
     lineHeight: 18,
     marginRight: 10,
   },
   stickyNote: {
     width: 100,
-    backgroundColor: '#FEF9E7',
+    backgroundColor: Colors.warningLight,
     borderRadius: 12,
     padding: 8,
     borderWidth: 1,
-    borderColor: '#FDE68A',
+    borderColor: Colors.amber200,
     position: 'relative',
-    shadowColor: '#F59E0B',
+    shadowColor: Colors.amber500,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -586,7 +587,7 @@ const styles = StyleSheet.create({
   stickyNoteText: {
     fontSize: 9,
     fontWeight: Typography.weight.bold,
-    color: '#B45309',
+    color: Colors.amber800,
     textAlign: 'center',
     lineHeight: 13,
   },
@@ -607,7 +608,7 @@ const styles = StyleSheet.create({
   outcomeText: {
     flex: 1,
     fontSize: Typography.size.xxs,
-    color: '#334155',
+    color: Colors.slate700,
     lineHeight: 15,
   },
   curriculumList: {
@@ -618,7 +619,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 6,
     borderBottomWidth: 1,
-    borderBottomColor: '#F8FAFC',
+    borderBottomColor: Colors.background,
   },
   stepCircle: {
     width: 28,
@@ -631,7 +632,7 @@ const styles = StyleSheet.create({
   stepCircleText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   curriculumDetails: {
     flex: 1,
@@ -639,11 +640,11 @@ const styles = StyleSheet.create({
   curriculumTitle: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.semiBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   curriculumMeta: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
   },
   highlightsGrid: {
@@ -668,20 +669,20 @@ const styles = StyleSheet.create({
   highlightTitle: {
     fontSize: 9,
     fontWeight: Typography.weight.bold,
-    color: '#1E293B',
+    color: Colors.slate800,
     textAlign: 'center',
     lineHeight: 12,
   },
   instructorCard: {
     marginHorizontal: 16,
     marginTop: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 14,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   instructorAvatar: {
     width: 56,
@@ -689,35 +690,35 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     marginRight: 12,
     borderWidth: 2,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
   },
   instructorInfo: {
     flex: 1,
   },
   instructorLearnFrom: {
     fontSize: 9,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   instructorName: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   instructorRole: {
     fontSize: Typography.size.xxs,
-    color: '#0084FF',
+    color: Colors.primary,
     fontWeight: Typography.weight.medium,
     marginBottom: 2,
   },
   instructorQuote: {
     fontSize: 10,
     fontStyle: 'italic',
-    color: '#64748B',
+    color: Colors.slate500,
     lineHeight: 13,
   },
   viewProfileBtn: {
     borderWidth: 1.5,
-    borderColor: '#0084FF',
+    borderColor: Colors.primary,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 14,
@@ -725,7 +726,7 @@ const styles = StyleSheet.create({
   viewProfileText: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   ratingSummaryRow: {
     flexDirection: 'row',
@@ -741,17 +742,17 @@ const styles = StyleSheet.create({
   bigRatingNumber: {
     fontSize: Typography.size.lg,
     fontWeight: Typography.weight.extraBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   ratingCountText: {
     fontSize: Typography.size.xs,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   testimonialsCol: {
     gap: 10,
   },
   reviewCard: {
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
     borderRadius: 12,
     padding: 10,
   },
@@ -771,7 +772,7 @@ const styles = StyleSheet.create({
   reviewAvatarLetter: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   reviewerInfo: {
     flex: 1,
@@ -782,7 +783,7 @@ const styles = StyleSheet.create({
   reviewerName: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   starsRow: {
     flexDirection: 'row',
@@ -790,7 +791,7 @@ const styles = StyleSheet.create({
   },
   reviewComment: {
     fontSize: Typography.size.xxs,
-    color: '#475569',
+    color: Colors.slate600,
     lineHeight: 15,
   },
   stickyBottomBar: {
@@ -798,7 +799,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     paddingVertical: 14,
     paddingHorizontal: 20,
     flexDirection: 'row',
@@ -806,7 +807,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.15,
     shadowRadius: 8,
@@ -815,17 +816,17 @@ const styles = StyleSheet.create({
   enrollCtaBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundColor: Colors.whiteAlpha20,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.3)',
+    borderColor: Colors.whiteAlpha30,
   },
   enrollCtaText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   pricingWrapper: {
     flexDirection: 'row',
@@ -835,15 +836,15 @@ const styles = StyleSheet.create({
   priceMain: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   priceStrike: {
     fontSize: Typography.size.xs,
-    color: 'rgba(255,255,255,0.7)',
+    color: Colors.whiteAlpha70,
     textDecorationLine: 'line-through',
   },
   discountBadge: {
-    backgroundColor: '#00C853',
+    backgroundColor: Colors.success,
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 6,
@@ -851,7 +852,7 @@ const styles = StyleSheet.create({
   discountText: {
     fontSize: 10,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
 });
 

@@ -11,6 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Svg, { Circle, Path, Rect, G } from 'react-native-svg';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import { SPEAKING_MODULES, PracticeModuleItem } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
 import { CategoryPill } from '../../common/CategoryPill';
@@ -66,7 +67,7 @@ export const PracticeScreen: React.FC = () => {
         <View style={styles.heroBanner}>
           <View style={styles.heroLeft}>
             <View style={styles.micIconCircle}>
-              <Ionicons name="mic" size={24} color="#0084FF" />
+              <Ionicons name="mic" size={24} color={Colors.primary} />
             </View>
             <Text style={styles.heroTitle}>Speaking Practice</Text>
             <Text style={styles.heroSubtitle}>
@@ -88,30 +89,30 @@ export const PracticeScreen: React.FC = () => {
           <View style={styles.heroArtBox}>
             <Svg width="130" height="130" viewBox="0 0 140 140">
               {/* Studio Mic Stand */}
-              <Rect x="100" y="60" width="10" height="16" rx="5" fill="#1E293B" />
-              <Path d="M 95 68 A 10 10 0 0 0 115 68" stroke="#1E293B" strokeWidth="2.5" fill="none" />
-              <Path d="M 105 78 L 105 92 M 98 92 L 112 92" stroke="#1E293B" strokeWidth="2.5" />
+              <Rect x="100" y="60" width="10" height="16" rx="5" fill={Colors.slate800} />
+              <Path d="M 95 68 A 10 10 0 0 0 115 68" stroke={Colors.slate800} strokeWidth="2.5" fill="none" />
+              <Path d="M 105 78 L 105 92 M 98 92 L 112 92" stroke={Colors.slate800} strokeWidth="2.5" />
 
               {/* Boy Head & Headphones */}
-              <Circle cx="60" cy="65" r="28" fill="#FCD34D" />
+              <Circle cx="60" cy="65" r="28" fill={Colors.amber300} />
               {/* Blue Hoodie */}
-              <Circle cx="60" cy="108" r="36" fill="#0084FF" />
+              <Circle cx="60" cy="108" r="36" fill={Colors.primary} />
               {/* Hair */}
-              <Path d="M 36 60 C 36 34 84 34 84 60 C 80 50 70 46 60 48 C 50 46 40 50 36 60 Z" fill="#1E293B" />
+              <Path d="M 36 60 C 36 34 84 34 84 60 C 80 50 70 46 60 48 C 50 46 40 50 36 60 Z" fill={Colors.slate800} />
               {/* Headphones Band & Pads */}
-              <Path d="M 34 65 C 34 38 86 38 86 65" stroke="#005CE6" strokeWidth="4" fill="none" />
-              <Rect x="30" y="58" width="8" height="18" rx="4" fill="#005CE6" />
-              <Rect x="82" y="58" width="8" height="18" rx="4" fill="#005CE6" />
+              <Path d="M 34 65 C 34 38 86 38 86 65" stroke={Colors.primaryDarker} strokeWidth="4" fill="none" />
+              <Rect x="30" y="58" width="8" height="18" rx="4" fill={Colors.primaryDarker} />
+              <Rect x="82" y="58" width="8" height="18" rx="4" fill={Colors.primaryDarker} />
 
               {/* Eyes & Smile */}
-              <Circle cx="54" cy="62" r="3" fill="#1E293B" />
-              <Circle cx="68" cy="62" r="3" fill="#1E293B" />
-              <Path d="M 55 70 Q 61 78 67 70" stroke="#E11D48" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              <Circle cx="54" cy="62" r="3" fill={Colors.slate800} />
+              <Circle cx="68" cy="62" r="3" fill={Colors.slate800} />
+              <Path d="M 55 70 Q 61 78 67 70" stroke={Colors.rose600} strokeWidth="2.5" fill="none" strokeLinecap="round" />
 
               {/* Speech Bubble: "Practice Makes Perfect!" */}
               <G transform="translate(68, 6)">
-                <Rect x="0" y="0" width="70" height="28" rx="6" fill="#0084FF" />
-                <Path d="M 10 28 L 6 34 L 16 28 Z" fill="#0084FF" />
+                <Rect x="0" y="0" width="70" height="28" rx="6" fill={Colors.primary} />
+                <Path d="M 10 28 L 6 34 L 16 28 Z" fill={Colors.primary} />
               </G>
             </Svg>
 
@@ -144,7 +145,7 @@ export const PracticeScreen: React.FC = () => {
         {/* Section Header: Speaking Practice Modules */}
         <View style={styles.sectionHeaderRow}>
           <View style={styles.sectionHeaderLeft}>
-            <Ionicons name="stats-chart" size={20} color="#0084FF" />
+            <Ionicons name="stats-chart" size={20} color={Colors.primary} />
             <Text style={styles.sectionHeaderText}>Speaking Practice Modules</Text>
           </View>
           <TouchableOpacity>
@@ -170,7 +171,7 @@ export const PracticeScreen: React.FC = () => {
           onPress={() => {}}
         >
           <View style={styles.targetIconBox}>
-            <Ionicons name="disc-outline" size={28} color="#0084FF" />
+            <Ionicons name="disc-outline" size={28} color={Colors.primary} />
           </View>
 
           <View style={styles.progressInfo}>
@@ -184,7 +185,7 @@ export const PracticeScreen: React.FC = () => {
             <CircularProgress percentage={68} size={54} strokeWidth={5} />
           </View>
 
-          <Ionicons name="chevron-forward" size={20} color="#0084FF" style={{ marginLeft: 6 }} />
+          <Ionicons name="chevron-forward" size={20} color={Colors.primary} style={{ marginLeft: 6 }} />
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -194,11 +195,11 @@ export const PracticeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     paddingBottom: 24,
@@ -207,13 +208,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 12,
     borderRadius: 20,
-    backgroundColor: '#E6F4FE',
+    backgroundColor: Colors.primaryLighter,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 16,
     borderWidth: 1,
-    borderColor: '#C7E8FD',
+    borderColor: Colors.sky150,
   },
   heroLeft: {
     flex: 1,
@@ -223,11 +224,11 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 6,
-    shadowColor: '#0084FF',
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 4,
@@ -236,23 +237,23 @@ const styles = StyleSheet.create({
   heroTitle: {
     fontSize: Typography.size.lg,
     fontWeight: Typography.weight.extraBold,
-    color: '#005CE6',
+    color: Colors.primaryDarker,
     marginBottom: 2,
   },
   heroSubtitle: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   heroDesc: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
     marginBottom: 10,
     lineHeight: 14,
   },
   heroCtaBtn: {
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     paddingVertical: 7,
     paddingHorizontal: 16,
     borderRadius: 20,
@@ -261,7 +262,7 @@ const styles = StyleSheet.create({
   heroCtaText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   heroArtBox: {
     width: 130,
@@ -279,7 +280,7 @@ const styles = StyleSheet.create({
   quoteBubbleLine: {
     fontSize: 8,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   categoriesSection: {
     marginTop: 14,
@@ -303,12 +304,12 @@ const styles = StyleSheet.create({
   sectionHeaderText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   viewAllText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   modulesList: {
     paddingHorizontal: 16,
@@ -316,14 +317,14 @@ const styles = StyleSheet.create({
   speakingProgressCard: {
     marginHorizontal: 16,
     marginTop: 10,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 14,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
-    shadowColor: '#0F172A',
+    borderColor: Colors.divider,
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.04,
     shadowRadius: 6,
@@ -333,7 +334,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: '#E8F4FD',
+    backgroundColor: Colors.primaryLight,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,
@@ -344,11 +345,11 @@ const styles = StyleSheet.create({
   progressCardTitle: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   progressCardSub: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
   },
   progressRingWrapper: {

@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../constants/fonts';
+import { Colors } from '../constants/color';
 
 export const BottomTabBar: React.FC<BottomTabBarProps> = ({
   state,
@@ -59,7 +60,7 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({
               style={styles.centerTabButton}
             >
               <View style={[styles.centerIconCircle, isFocused && styles.centerIconCircleActive]}>
-                <Ionicons name="mic" size={26} color="#FFFFFF" />
+                <Ionicons name="mic" size={26} color={Colors.white} />
               </View>
               <Text
                 style={[
@@ -84,7 +85,7 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({
             <Ionicons
               name={iconName}
               size={22}
-              color={isFocused ? '#0084FF' : '#94A3B8'}
+              color={isFocused ? Colors.primary : Colors.textMuted}
             />
             <Text
               style={[
@@ -108,12 +109,12 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ? 84 : 64,
     paddingBottom: Platform.OS === 'ios' ? 24 : 8,
     paddingTop: 8,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderTopWidth: 1,
-    borderTopColor: '#F1F5F9',
+    borderTopColor: Colors.borderLight,
     justifyContent: 'space-around',
     alignItems: 'center',
-    shadowColor: '#0F172A',
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.05,
     shadowRadius: 6,
@@ -136,17 +137,17 @@ const styles = StyleSheet.create({
     width: 46,
     height: 46,
     borderRadius: 23,
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#0084FF',
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.35,
     shadowRadius: 6,
     elevation: 6,
   },
   centerIconCircleActive: {
-    backgroundColor: '#0062E0',
+    backgroundColor: Colors.primaryBlueDark,
     transform: [{ scale: 1.05 }],
   },
   centerTabLabel: {
@@ -158,11 +159,11 @@ const styles = StyleSheet.create({
     marginTop: 3,
   },
   activeTabLabel: {
-    color: '#0084FF',
+    color: Colors.primary,
     fontWeight: Typography.weight.bold,
   },
   inactiveTabLabel: {
-    color: '#94A3B8',
+    color: Colors.textMuted,
   },
   activeIndicatorLine: {
     position: 'absolute',
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({
     width: 16,
     height: 3,
     borderRadius: 2,
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
   },
 });
 

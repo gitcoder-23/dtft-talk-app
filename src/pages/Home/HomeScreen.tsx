@@ -21,6 +21,7 @@ import Svg, {
 } from 'react-native-svg';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
 import { Typography } from '../../constants/fonts';
+import { Colors } from '../../constants/color';
 import {
   HOME_QUICK_CATEGORIES,
   CONTINUE_LEARNING_ITEM,
@@ -86,40 +87,40 @@ export const HomeScreen: React.FC = () => {
             <Svg width="150" height="150" viewBox="0 0 160 160">
               <Defs>
                 <SvgGradient id="skyGrad" x1="0" y1="0" x2="1" y2="1">
-                  <Stop offset="0" stopColor="#BAE6FD" />
-                  <Stop offset="1" stopColor="#E0F2FE" />
+                  <Stop offset="0" stopColor={Colors.sky200} />
+                  <Stop offset="1" stopColor={Colors.sky50} />
                 </SvgGradient>
               </Defs>
 
               {/* Big Ben Outline / London Skyline */}
               <Path
                 d="M 120 160 L 120 90 L 126 80 L 132 90 L 132 160 Z"
-                fill="#93C5FD"
+                fill={Colors.blue200}
                 opacity={0.6}
               />
-              <Rect x="123" y="92" width="6" height="6" rx="3" fill="#FFFFFF" opacity={0.8} />
-              <Path d="M 126 70 L 126 80" stroke="#93C5FD" strokeWidth="2" />
+              <Rect x="123" y="92" width="6" height="6" rx="3" fill={Colors.white} opacity={0.8} />
+              <Path d="M 126 70 L 126 80" stroke={Colors.blue200} strokeWidth="2" />
 
               {/* Boy Mascot in Blue Hoodie */}
-              <Circle cx="80" cy="90" r="34" fill="#0084FF" />
-              <Circle cx="80" cy="58" r="26" fill="#FCD34D" />
+              <Circle cx="80" cy="90" r="34" fill={Colors.primary} />
+              <Circle cx="80" cy="58" r="26" fill={Colors.amber300} />
               {/* Hair */}
-              <Path d="M 56 56 C 56 32 104 32 104 56 C 100 48 90 44 80 46 C 70 44 60 48 56 56 Z" fill="#1E293B" />
+              <Path d="M 56 56 C 56 32 104 32 104 56 C 100 48 90 44 80 46 C 70 44 60 48 56 56 Z" fill={Colors.slate800} />
               {/* Eyes & Smile */}
-              <Circle cx="72" cy="56" r="3" fill="#1E293B" />
-              <Circle cx="88" cy="56" r="3" fill="#1E293B" />
-              <Path d="M 74 65 Q 80 72 86 65" stroke="#E11D48" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              <Circle cx="72" cy="56" r="3" fill={Colors.slate800} />
+              <Circle cx="88" cy="56" r="3" fill={Colors.slate800} />
+              <Path d="M 74 65 Q 80 72 86 65" stroke={Colors.rose600} strokeWidth="2.5" fill="none" strokeLinecap="round" />
 
               {/* Holding Book: "Speak English" */}
-              <Rect x="62" y="98" width="40" height="36" rx="4" fill="#005CE6" stroke="#FFFFFF" strokeWidth="1.5" />
-              <Rect x="64" y="100" width="36" height="4" fill="#FFC107" />
-              <Path d="M 66 112 L 94 112 M 66 120 L 90 120" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+              <Rect x="62" y="98" width="40" height="36" rx="4" fill={Colors.primaryDarker} stroke={Colors.white} strokeWidth="1.5" />
+              <Rect x="64" y="100" width="36" height="4" fill={Colors.amber} />
+              <Path d="M 66 112 L 94 112 M 66 120 L 90 120" stroke={Colors.white} strokeWidth="2" strokeLinecap="round" />
 
               {/* Floating Quote Bubble */}
               <G transform="translate(70, 6)">
-                <Rect x="0" y="0" width="85" height="34" rx="8" fill="#FFFFFF" />
-                <Path d="M 14 34 L 10 40 L 22 34 Z" fill="#FFFFFF" />
-                <Circle cx="8" cy="17" r="4" fill="#FFB300" />
+                <Rect x="0" y="0" width="85" height="34" rx="8" fill={Colors.white} />
+                <Path d="M 14 34 L 10 40 L 22 34 Z" fill={Colors.white} />
+                <Circle cx="8" cy="17" r="4" fill={Colors.warning} />
               </G>
             </Svg>
 
@@ -159,7 +160,7 @@ export const HomeScreen: React.FC = () => {
           {/* Left: Streak */}
           <View style={styles.streakHalf}>
             <View style={styles.streakIconCircle}>
-              <Ionicons name="flame" size={24} color="#FF9800" />
+              <Ionicons name="flame" size={24} color={Colors.orange500} />
             </View>
             <View style={styles.streakInfo}>
               <Text style={styles.streakTitle}>
@@ -178,19 +179,19 @@ export const HomeScreen: React.FC = () => {
             activeOpacity={0.7}
             onPress={() => navigation.navigate('MainTabs', { screen: 'ProgressTab' })}
           >
-            <Ionicons name="star" size={22} color="#FFC107" />
+            <Ionicons name="star" size={22} color={Colors.amber} />
             <View style={styles.levelInfo}>
               <Text style={styles.levelLabel}>Your Level</Text>
               <Text style={styles.levelValue}>Beginner</Text>
             </View>
-            <Ionicons name="chevron-forward" size={18} color="#0084FF" />
+            <Ionicons name="chevron-forward" size={18} color={Colors.primary} />
           </TouchableOpacity>
         </View>
 
         {/* Continue Learning Section */}
         <View style={styles.sectionHeaderRow}>
           <View style={styles.sectionTitleLeft}>
-            <Ionicons name="book" size={20} color="#0084FF" />
+            <Ionicons name="book" size={20} color={Colors.primary} />
             <Text style={styles.sectionTitleText}>Continue Learning</Text>
           </View>
           <TouchableOpacity
@@ -254,7 +255,7 @@ export const HomeScreen: React.FC = () => {
         {/* Today's Practice Section */}
         <View style={styles.sectionHeaderRow}>
           <View style={styles.sectionTitleLeft}>
-            <Ionicons name="disc-outline" size={20} color="#FF3B30" />
+            <Ionicons name="disc-outline" size={20} color={Colors.danger} />
             <Text style={styles.sectionTitleText}>Today's Practice</Text>
           </View>
           <TouchableOpacity>
@@ -271,7 +272,7 @@ export const HomeScreen: React.FC = () => {
               onPress={() => navigation.navigate('MainTabs', { screen: 'PracticeTab' })}
               style={[styles.practiceMiniCard, { backgroundColor: item.bgColor }]}
             >
-              <View style={[styles.practiceIconCircle, { backgroundColor: '#FFFFFF' }]}>
+              <View style={[styles.practiceIconCircle, { backgroundColor: Colors.white }]}>
                 <Ionicons name={item.icon as any} size={22} color={item.color} />
               </View>
               <Text style={styles.practiceMiniTitle}>{item.title}</Text>
@@ -288,7 +289,7 @@ export const HomeScreen: React.FC = () => {
         {/* Popular Topics Section */}
         <View style={styles.sectionHeaderRow}>
           <View style={styles.sectionTitleLeft}>
-            <Ionicons name="flame-outline" size={20} color="#FF9800" />
+            <Ionicons name="flame-outline" size={20} color={Colors.orange500} />
             <Text style={styles.sectionTitleText}>Popular Topics</Text>
           </View>
           <TouchableOpacity
@@ -318,7 +319,7 @@ export const HomeScreen: React.FC = () => {
         {/* Interactive Tour Banner */}
         <View style={styles.tourBanner}>
           <View style={styles.tourIconCircle}>
-            <Ionicons name="bulb-outline" size={22} color="#FFB300" />
+            <Ionicons name="bulb-outline" size={22} color={Colors.warning} />
           </View>
           <View style={styles.tourTextInfo}>
             <Text style={styles.tourTitle}>New to DTFT Talk?</Text>
@@ -338,11 +339,11 @@ export const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: Colors.background,
   },
   scrollContent: {
     paddingBottom: 24,
@@ -351,15 +352,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 12,
     borderRadius: 22,
-    backgroundColor: '#E1F3FD',
+    backgroundColor: Colors.sky100,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 16,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: '#C7E8FD',
-    shadowColor: '#0084FF',
+    borderColor: Colors.sky150,
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
     shadowRadius: 10,
@@ -372,28 +373,28 @@ const styles = StyleSheet.create({
   heroSub: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0062E0',
+    color: Colors.primaryBlueDark,
   },
   heroTitle: {
     fontSize: Typography.size.xl,
     fontWeight: Typography.weight.extraBold,
-    color: '#005CE6',
+    color: Colors.primaryDarker,
     lineHeight: 24,
     marginVertical: 4,
   },
   heroTag: {
     fontSize: Typography.size.xxs,
-    color: '#475569',
+    color: Colors.slate600,
     fontWeight: Typography.weight.medium,
     marginBottom: 12,
   },
   heroCtaBtn: {
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     paddingVertical: 8,
     paddingHorizontal: 18,
     borderRadius: 20,
     alignSelf: 'flex-start',
-    shadowColor: '#0084FF',
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
@@ -402,7 +403,7 @@ const styles = StyleSheet.create({
   heroCtaText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   heroRightArt: {
     width: 140,
@@ -420,12 +421,12 @@ const styles = StyleSheet.create({
   quoteBubbleLine1: {
     fontSize: 9,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   quoteBubbleLine2: {
     fontSize: 8,
     fontWeight: Typography.weight.medium,
-    color: '#FF9500',
+    color: Colors.secondary,
   },
   quickCategoriesSection: {
     marginTop: 16,
@@ -446,26 +447,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 6,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   quickCatTitle: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.semiBold,
-    color: '#1E293B',
+    color: Colors.slate800,
     textAlign: 'center',
     lineHeight: 13,
   },
   streakLevelCard: {
     marginHorizontal: 16,
     marginTop: 18,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 14,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
-    shadowColor: '#0F172A',
+    borderColor: Colors.divider,
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.04,
     shadowRadius: 6,
@@ -481,7 +482,7 @@ const styles = StyleSheet.create({
     width: 42,
     height: 42,
     borderRadius: 21,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: Colors.amber50,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -489,21 +490,21 @@ const styles = StyleSheet.create({
   streakTitle: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   streakNumber: {
-    color: '#FF9800',
+    color: Colors.orange500,
     fontWeight: Typography.weight.extraBold,
   },
   streakSubtitle: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
   },
   streakDivider: {
     width: 1,
     height: 38,
-    backgroundColor: '#EEF2F6',
+    backgroundColor: Colors.divider,
     marginHorizontal: 8,
   },
   levelHalf: {
@@ -518,12 +519,12 @@ const styles = StyleSheet.create({
   },
   levelLabel: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
   },
   levelValue: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   sectionHeaderRow: {
     flexDirection: 'row',
@@ -541,28 +542,28 @@ const styles = StyleSheet.create({
   sectionTitleText: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   viewAllText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   changeGoalText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#0084FF',
+    color: Colors.primary,
   },
   continueCard: {
     marginHorizontal: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 18,
     padding: 12,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
-    shadowColor: '#0F172A',
+    borderColor: Colors.divider,
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.04,
     shadowRadius: 6,
@@ -570,7 +571,7 @@ const styles = StyleSheet.create({
   },
   notebookGraphicBox: {
     width: 120,
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     borderRadius: 12,
     padding: 8,
     marginRight: 12,
@@ -581,10 +582,10 @@ const styles = StyleSheet.create({
   notebookHeaderTitle: {
     fontSize: 10,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   grammarBadge: {
-    backgroundColor: '#FFC107',
+    backgroundColor: Colors.amber,
     alignSelf: 'flex-start',
     paddingHorizontal: 5,
     paddingVertical: 1,
@@ -594,16 +595,16 @@ const styles = StyleSheet.create({
   grammarBadgeText: {
     fontSize: 8,
     fontWeight: Typography.weight.bold,
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   notebookPage: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 6,
     padding: 6,
   },
   notebookPageText: {
     fontSize: 9,
-    color: '#1E293B',
+    color: Colors.slate800,
     lineHeight: 12,
     fontWeight: Typography.weight.medium,
   },
@@ -613,11 +614,11 @@ const styles = StyleSheet.create({
   continueTitle: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   continueDesc: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 2,
     lineHeight: 14,
   },
@@ -626,23 +627,23 @@ const styles = StyleSheet.create({
   },
   progressBarTrack: {
     height: 5,
-    backgroundColor: '#E2E8F0',
+    backgroundColor: Colors.border,
     borderRadius: 3,
     overflow: 'hidden',
     marginBottom: 3,
   },
   progressBarFill: {
     height: '100%',
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     borderRadius: 3,
   },
   progressLabel: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: Colors.slate500,
     fontWeight: Typography.weight.medium,
   },
   continueBtn: {
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     paddingVertical: 6,
     paddingHorizontal: 14,
     borderRadius: 16,
@@ -652,7 +653,7 @@ const styles = StyleSheet.create({
   continueBtnText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   practiceCardsGrid: {
     flexDirection: 'row',
@@ -666,7 +667,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.04)',
+    borderColor: Colors.shadowLight,
   },
   practiceIconCircle: {
     width: 38,
@@ -675,7 +676,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 6,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
@@ -684,12 +685,12 @@ const styles = StyleSheet.create({
   practiceMiniTitle: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     marginBottom: 2,
   },
   practiceMiniSub: {
     fontSize: 9,
-    color: '#64748B',
+    color: Colors.slate500,
     textAlign: 'center',
     lineHeight: 12,
     marginBottom: 8,
@@ -699,7 +700,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 12,
     borderWidth: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   practiceMiniBtnText: {
     fontSize: 9,
@@ -714,13 +715,13 @@ const styles = StyleSheet.create({
   },
   topicPillItem: {
     width: (width - 42) / 2,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 14,
     padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   topicIconSmall: {
     width: 30,
@@ -733,25 +734,25 @@ const styles = StyleSheet.create({
   topicTitleText: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.semiBold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
     flex: 1,
   },
   tourBanner: {
     marginHorizontal: 16,
     marginTop: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderRadius: 16,
     padding: 12,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: Colors.divider,
   },
   tourIconCircle: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: '#FEF9E7',
+    backgroundColor: Colors.warningLight,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
@@ -762,15 +763,15 @@ const styles = StyleSheet.create({
   tourTitle: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: Colors.textPrimary,
   },
   tourSubtitle: {
     fontSize: 10,
-    color: '#64748B',
+    color: Colors.slate500,
     marginTop: 1,
   },
   tourBtn: {
-    backgroundColor: '#0084FF',
+    backgroundColor: Colors.primary,
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 14,
@@ -778,7 +779,7 @@ const styles = StyleSheet.create({
   tourBtnText: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
-    color: '#FFFFFF',
+    color: Colors.white,
   },
 });
 

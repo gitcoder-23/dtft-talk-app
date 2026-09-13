@@ -29,14 +29,14 @@ export const CategoryPill: React.FC<CategoryPillProps> = ({
         styles.pillContainer,
         isActive
           ? styles.activePill
-          : [styles.inactivePill, { borderColor: accentColor ? `${accentColor}40` : '#E2E8F0' }],
+          : [styles.inactivePill, { borderColor: accentColor ? `${accentColor}40` : Colors.border }],
       ]}
     >
       {icon && (
         <Ionicons
           name={icon}
           size={16}
-          color={isActive ? '#FFFFFF' : accentColor}
+          color={isActive ? Colors.white : accentColor}
           style={styles.icon}
         />
       )}
@@ -79,15 +79,15 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   activePill: {
-    backgroundColor: '#0084FF',
-    shadowColor: '#0084FF',
+    backgroundColor: Colors.primary,
+    shadowColor: Colors.primary,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 3,
   },
   inactivePill: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
     borderWidth: 1,
   },
   icon: {
@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weight.semiBold,
   },
   activeLabel: {
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   inactiveLabel: {
-    color: '#1E293B',
+    color: Colors.slate800,
   },
   badgeWrapper: {
     marginLeft: 6,
@@ -110,20 +110,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   activeBadge: {
-    backgroundColor: 'rgba(255,255,255,0.25)',
+    backgroundColor: Colors.whiteAlpha25,
   },
   inactiveBadge: {
-    backgroundColor: '#F1F5F9',
+    backgroundColor: Colors.borderLight,
   },
   badgeText: {
     fontSize: Typography.size.xxs,
     fontWeight: Typography.weight.bold,
   },
   activeBadgeText: {
-    color: '#FFFFFF',
+    color: Colors.white,
   },
   inactiveBadgeText: {
-    color: '#64748B',
+    color: Colors.slate500,
   },
 });
 
