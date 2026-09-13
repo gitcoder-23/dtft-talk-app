@@ -1,47 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   Image,
   Switch,
   Alert,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Ionicons } from '@expo/vector-icons';
-import { RootStackParamList } from '../../appNavigation/navigationTypes';
-import { Colors } from '../../constants/color';
-import { Typography } from '../../constants/fonts';
-import { AssetImages } from '../../constants/assetImages';
-import { CURRENT_STUDENT } from '../../constants/mockData';
-import { AppHeader } from '../../common/AppHeader';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Ionicons } from "@expo/vector-icons";
+import { RootStackParamList } from "../../appNavigation/navigationTypes";
+import { Typography } from "../../constants/fonts";
+import { AssetImages } from "../../constants/assetImages";
+import { CURRENT_STUDENT } from "../../constants/mockData";
+import { AppHeader } from "../../common/AppHeader";
 
 export const ProfileScreen: React.FC = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
 
   const handleLogout = () => {
-    Alert.alert(
-      'Log Out',
-      'Are you sure you want to log out of DTFT Talk?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Log Out',
-          style: 'destructive',
-          onPress: () => navigation.navigate('Welcome'),
-        },
-      ]
-    );
+    Alert.alert("Log Out", "Are you sure you want to log out of DTFT Talk?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Log Out",
+        style: "destructive",
+        onPress: () => navigation.navigate("Welcome"),
+      },
+    ]);
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       <AppHeader showBack={false} hasUnreadNotifications={false} />
 
       <ScrollView
@@ -92,9 +87,11 @@ export const ProfileScreen: React.FC = () => {
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('CourseDetail')}
+            onPress={() => navigation.navigate("CourseDetail")}
           >
-            <View style={[styles.menuIconCircle, { backgroundColor: '#E8F4FD' }]}>
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#E8F4FD" }]}
+            >
               <Ionicons name="book-outline" size={20} color="#0084FF" />
             </View>
             <Text style={styles.menuItemText}>My Enrolled Course</Text>
@@ -104,9 +101,13 @@ export const ProfileScreen: React.FC = () => {
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('MainTabs', { screen: 'NotesTab' })}
+            onPress={() =>
+              navigation.navigate("MainTabs", { screen: "NotesTab" })
+            }
           >
-            <View style={[styles.menuIconCircle, { backgroundColor: '#EAF7EE' }]}>
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#EAF7EE" }]}
+            >
               <Ionicons name="download-outline" size={20} color="#00C853" />
             </View>
             <Text style={styles.menuItemText}>Downloaded Study Notes</Text>
@@ -116,9 +117,16 @@ export const ProfileScreen: React.FC = () => {
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
-            onPress={() => Alert.alert('Certificates', 'Your Spoken English certificate will be unlocked upon 100% course completion!')}
+            onPress={() =>
+              Alert.alert(
+                "Certificates",
+                "Your Spoken English certificate will be unlocked upon 100% course completion!",
+              )
+            }
           >
-            <View style={[styles.menuIconCircle, { backgroundColor: '#FEF9E7' }]}>
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#FEF9E7" }]}
+            >
               <Ionicons name="ribbon-outline" size={20} color="#FFB300" />
             </View>
             <Text style={styles.menuItemText}>Certificates & Achievements</Text>
@@ -131,35 +139,50 @@ export const ProfileScreen: React.FC = () => {
           <Text style={styles.groupHeading}>Preferences & App</Text>
 
           <View style={styles.menuItem}>
-            <View style={[styles.menuIconCircle, { backgroundColor: '#F4EFFB' }]}>
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#F4EFFB" }]}
+            >
               <Ionicons name="moon-outline" size={20} color="#8E24AA" />
             </View>
             <Text style={styles.menuItemText}>Dark Mode</Text>
             <Switch
               value={isDarkMode}
               onValueChange={setIsDarkMode}
-              trackColor={{ false: '#E2E8F0', true: '#0084FF' }}
+              trackColor={{ false: "#E2E8F0", true: "#0084FF" }}
             />
           </View>
 
           <View style={styles.menuItem}>
-            <View style={[styles.menuIconCircle, { backgroundColor: '#E8F4FD' }]}>
-              <Ionicons name="notifications-outline" size={20} color="#0084FF" />
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#E8F4FD" }]}
+            >
+              <Ionicons
+                name="notifications-outline"
+                size={20}
+                color="#0084FF"
+              />
             </View>
             <Text style={styles.menuItemText}>Practice Reminders</Text>
             <Switch
               value={notificationsEnabled}
               onValueChange={setNotificationsEnabled}
-              trackColor={{ false: '#E2E8F0', true: '#0084FF' }}
+              trackColor={{ false: "#E2E8F0", true: "#0084FF" }}
             />
           </View>
 
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
-            onPress={() => Alert.alert('DTFT Talk Support', 'Contact us 24x7 at support@dtfttalk.com or call +91 800-DTFT-TALK')}
+            onPress={() =>
+              Alert.alert(
+                "DTFT Talk Support",
+                "Contact us 24x7 at support@dtfttalk.com or call +91 800-DTFT-TALK",
+              )
+            }
           >
-            <View style={[styles.menuIconCircle, { backgroundColor: '#E0F7FA' }]}>
+            <View
+              style={[styles.menuIconCircle, { backgroundColor: "#E0F7FA" }]}
+            >
               <Ionicons name="help-circle-outline" size={20} color="#00ACC1" />
             </View>
             <Text style={styles.menuItemText}>Help & Support</Text>
@@ -173,24 +196,29 @@ export const ProfileScreen: React.FC = () => {
           activeOpacity={0.8}
           onPress={handleLogout}
         >
-          <Ionicons name="log-out-outline" size={20} color="#FF3B30" style={{ marginRight: 8 }} />
+          <Ionicons
+            name="log-out-outline"
+            size={20}
+            color="#FF3B30"
+            style={{ marginRight: 8 }}
+          />
           <Text style={styles.logoutBtnText}>Log Out from DTFT Talk</Text>
         </TouchableOpacity>
 
         <Text style={styles.versionText}>DTFT Talk App v1.0.0 (Build 57)</Text>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
   },
   container: {
     flex: 1,
-    backgroundColor: '#F8FAFC',
+    backgroundColor: "#F8FAFC",
   },
   scrollContent: {
     paddingHorizontal: 16,
@@ -198,13 +226,13 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   profileCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 20,
     padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: "#EEF2F6",
     marginBottom: 16,
   },
   avatarImage: {
@@ -212,25 +240,25 @@ const styles = StyleSheet.create({
     height: 64,
     borderRadius: 32,
     borderWidth: 2,
-    borderColor: '#0084FF',
+    borderColor: "#0084FF",
     marginRight: 14,
   },
   profileDetails: {
     flex: 1,
   },
   nameBadgeRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 8,
     marginBottom: 2,
   },
   studentName: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0F172A',
+    color: "#0F172A",
   },
   levelPill: {
-    backgroundColor: '#E8F4FD',
+    backgroundColor: "#E8F4FD",
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 10,
@@ -238,104 +266,104 @@ const styles = StyleSheet.create({
   levelPillText: {
     fontSize: 10,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: "#0084FF",
   },
   studentIdText: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: "#64748B",
     fontWeight: Typography.weight.medium,
   },
   emailText: {
     fontSize: Typography.size.xxs,
-    color: '#94A3B8',
+    color: "#94A3B8",
     marginTop: 2,
   },
   statsBar: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 16,
     paddingVertical: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: "#EEF2F6",
     marginBottom: 20,
   },
   statCol: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   statNum: {
     fontSize: Typography.size.md,
     fontWeight: Typography.weight.bold,
-    color: '#0084FF',
+    color: "#0084FF",
   },
   statLabel: {
     fontSize: Typography.size.xxs,
-    color: '#64748B',
+    color: "#64748B",
     marginTop: 2,
   },
   statDivider: {
     width: 1,
     height: 24,
-    backgroundColor: '#EEF2F6',
+    backgroundColor: "#EEF2F6",
   },
   menuGroup: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 20,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#EEF2F6',
+    borderColor: "#EEF2F6",
     marginBottom: 16,
   },
   groupHeading: {
     fontSize: Typography.size.xs,
     fontWeight: Typography.weight.bold,
-    color: '#94A3B8',
-    textTransform: 'uppercase',
+    color: "#94A3B8",
+    textTransform: "uppercase",
     letterSpacing: 0.5,
     marginBottom: 10,
   },
   menuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#F8FAFC',
+    borderBottomColor: "#F8FAFC",
   },
   menuIconCircle: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: 12,
   },
   menuItemText: {
     flex: 1,
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.semiBold,
-    color: '#1E293B',
+    color: "#1E293B",
   },
   logoutBtn: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFF0F2',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFF0F2",
     borderRadius: 16,
     paddingVertical: 14,
     marginTop: 8,
     borderWidth: 1,
-    borderColor: '#FFEBEB',
+    borderColor: "#FFEBEB",
   },
   logoutBtnText: {
     fontSize: Typography.size.sm,
     fontWeight: Typography.weight.bold,
-    color: '#FF3B30',
+    color: "#FF3B30",
   },
   versionText: {
     fontSize: 10,
-    color: '#94A3B8',
-    textAlign: 'center',
+    color: "#94A3B8",
+    textAlign: "center",
     marginTop: 18,
   },
 });

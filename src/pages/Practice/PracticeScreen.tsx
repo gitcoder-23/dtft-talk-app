@@ -4,14 +4,12 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Svg, { Circle, Path, Rect, G } from 'react-native-svg';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import { SPEAKING_MODULES, PracticeModuleItem } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
@@ -51,7 +49,7 @@ export const PracticeScreen: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       {/* App Header */}
       <AppHeader
         showBack={true}
@@ -189,7 +187,7 @@ export const PracticeScreen: React.FC = () => {
           <Ionicons name="chevron-forward" size={20} color="#0084FF" style={{ marginLeft: 6 }} />
         </TouchableOpacity>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

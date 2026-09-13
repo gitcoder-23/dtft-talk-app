@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
@@ -21,10 +20,8 @@ import Svg, {
   Defs,
 } from 'react-native-svg';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import {
-  CURRENT_STUDENT,
   HOME_QUICK_CATEGORIES,
   CONTINUE_LEARNING_ITEM,
   TODAY_PRACTICE_ITEMS,
@@ -50,7 +47,7 @@ export const HomeScreen: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       {/* App Header */}
       <AppHeader
         showBack={false}
@@ -334,7 +331,7 @@ export const HomeScreen: React.FC = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

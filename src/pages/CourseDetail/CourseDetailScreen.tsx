@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   Image,
   Alert,
@@ -16,12 +15,7 @@ import Svg, {
   Rect,
   Circle,
   Path,
-  G,
-  LinearGradient as SvgGradient,
-  Stop,
-  Defs,
 } from 'react-native-svg';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import { AssetImages } from '../../constants/assetImages';
 import { COMPLETE_COURSE_DATA } from '../../constants/mockData';
@@ -68,7 +62,7 @@ export const CourseDetailScreen: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       {/* App Header */}
       <AppHeader
         showBack={true}
@@ -385,7 +379,7 @@ export const CourseDetailScreen: React.FC = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -4,11 +4,12 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   Dimensions,
   Platform,
+  StatusBar,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Svg, {
   Circle,
@@ -21,7 +22,6 @@ import Svg, {
 } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import { CustomButton } from '../../common/CustomButton';
 
@@ -30,6 +30,12 @@ const { width } = Dimensions.get('window');
 type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
 export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
+  const topInset = Math.max(
+    insets.top,
+    Platform.OS === 'android' ? (StatusBar.currentHeight ?? 24) : 0
+  );
+
   const handleGetStarted = () => {
     navigation.navigate('MainTabs');
   };
@@ -39,7 +45,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
@@ -55,7 +61,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
         </View>
 
         {/* Top Logo Section: 4 Circles DTFT Logo */}
-        <View style={styles.logoSection}>
+        <View style={[styles.logoSection, { paddingTop: topInset + 12 }]}>
           <View style={styles.fourCircleRow}>
             <View style={[styles.circleBadge, { backgroundColor: '#F44336' }]}>
               <Text style={styles.circleLetter}>D</Text>
@@ -286,7 +292,7 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

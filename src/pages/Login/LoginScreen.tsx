@@ -5,15 +5,15 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  SafeAreaView,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  StatusBar,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../../appNavigation/navigationTypes';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import { AppLogo } from '../../common/AppLogo';
 import { CustomButton } from '../../common/CustomButton';
@@ -21,11 +21,17 @@ import { CustomButton } from '../../common/CustomButton';
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 export const LoginScreen: React.FC<Props> = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
+  const topInset = Math.max(
+    insets.top,
+    Platform.OS === 'android' ? (StatusBar.currentHeight ?? 24) : 0
+  );
+
   const [authMethod, setAuthMethod] = useState<'mobile' | 'email'>('mobile');
   const [phoneNumber, setPhoneNumber] = useState('9876543210');
   const [email, setEmail] = useState('student@dtfttalk.com');
   const [isOtpSent, setIsOtpSent] = useState(false);
-  const [otpValues, setOtpValues] = useState(['5', '2', '8', '9']);
+  const [otpValues] = useState(['5', '2', '8', '9']);
   const [resendTimer, setResendTimer] = useState(45);
   const [loading, setLoading] = useState(false);
 
@@ -61,13 +67,13 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
-          contentContainerStyle={styles.scrollContent}
+          contentContainerStyle={[styles.scrollContent, { paddingTop: topInset + 12 }]}
           showsVerticalScrollIndicator={false}
         >
           {/* Top Bar with Back Button */}
@@ -280,7 +286,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </View>
   );
 };
 

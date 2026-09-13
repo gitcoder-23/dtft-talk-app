@@ -4,12 +4,9 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
-  TouchableOpacity,
   Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Colors } from '../../constants/color';
 import { Typography } from '../../constants/fonts';
 import { CURRENT_STUDENT } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
@@ -21,7 +18,7 @@ export const ProgressScreen: React.FC = () => {
   const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       <AppHeader showBack={false} hasUnreadNotifications={true} />
 
       <ScrollView
@@ -159,7 +156,7 @@ export const ProgressScreen: React.FC = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
