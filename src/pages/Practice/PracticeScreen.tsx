@@ -26,6 +26,7 @@ import {
   AI_SPEAK_DATA,
 } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
+import { getSafeBottomPadding } from '../../utils/safeArea';
 
 interface ChatMessage {
   id: string;
@@ -187,7 +188,7 @@ export const PracticeScreen: React.FC = () => {
         style={styles.container}
         contentContainerStyle={[
           styles.scrollContent,
-          { paddingBottom: insets.bottom + 20 },
+          { paddingBottom: getSafeBottomPadding(insets.bottom, 16) + 20 },
         ]}
         showsVerticalScrollIndicator={false}
       >

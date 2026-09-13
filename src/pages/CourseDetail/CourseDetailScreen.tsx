@@ -24,6 +24,7 @@ import { Typography } from '../../constants/fonts';
 import { Colors } from '../../constants/color';
 import { COMPLETE_COURSE_DATA } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
+import { getSafeBottomPadding } from '../../utils/safeArea';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -155,7 +156,7 @@ export const CourseDetailScreen: React.FC = () => {
         style={styles.container}
         contentContainerStyle={[
           styles.scrollContent,
-          { paddingBottom: insets.bottom + 85 },
+          { paddingBottom: getSafeBottomPadding(insets.bottom, 14) + 75 },
         ]}
         showsVerticalScrollIndicator={false}
       >
@@ -656,7 +657,7 @@ export const CourseDetailScreen: React.FC = () => {
       </ScrollView>
 
       {/* Sticky Bottom Bar: Enroll Now & Price */}
-      <View style={[styles.bottomStickyBar, { paddingBottom: Math.max(insets.bottom, 12) }]}>
+      <View style={[styles.bottomStickyBar, { paddingBottom: getSafeBottomPadding(insets.bottom, 12) }]}>
         <TouchableOpacity
           activeOpacity={0.88}
           onPress={handleEnroll}
