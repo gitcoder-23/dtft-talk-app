@@ -9,7 +9,6 @@ import {
   Share,
   Platform,
   LayoutAnimation,
-  UIManager,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -25,10 +24,6 @@ import { Colors } from '../../constants/color';
 import { COMPLETE_COURSE_DATA } from '../../constants/mockData';
 import { AppHeader } from '../../common/AppHeader';
 import { getSafeBottomPadding } from '../../utils/safeArea';
-
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
-}
 
 const DETAIL_SUB_TABS = [
   { id: 'overview', label: 'Overview', icon: 'document-text' },
